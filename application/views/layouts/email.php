@@ -1,6 +1,6 @@
 <?php
-  $email = @$email;
-	$url = @$token;
+$email = @$email;
+$url = @$token;
 ?>
 <html>
 
@@ -403,9 +403,9 @@
                                 <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
                                     <tr>
                                         <td>
-                                            <p>Mohon verifikasi email <strong><?=$email?></strong>, link hanya berlaku
+                                            <p>Mohon verifikasi email <strong><?= $email ?></strong>, link hanya berlaku
                                                 10 menit.</p>
-                                            <p><a href="<?=$url?>" target="_blank"><?=$url?></a></p>
+                                            <p><a href="<?= $url ?>" target="_blank"><?= $url ?></a></p>
                                         </td>
                                     </tr>
                                 </table>

@@ -49,10 +49,8 @@ header('Access-Control-Allow-Origin: *');
 
     <nav class="navbar navbar-expand-lg fixed-top trans-navigation header-white">
         <div class="container">
-            <a class="navbar-brand" href="<?= base_url('admin') ?>"><img src="assets/images/PISH2.png" alt=""
-                    class=" PISH"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="<?= base_url('admin') ?>"><img src="assets/images/Logo2.png" alt="" class=" PISH"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
                     <i class="fa fa-bars"></i>
                 </span>
@@ -61,20 +59,16 @@ header('Access-Control-Allow-Origin: *');
             <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Dashboard" ? "active" : null ?> smoth-scroll"
-                            href="<?= base_url('admin') ?>">Home</a>
+                        <a class="nav-link <?= @$title == "Dashboard" ? "active" : null ?> smoth-scroll" href="<?= base_url('admin') ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "User" ? "active" : null ?> smoth-scroll"
-                            href="<?= base_url("admin/user") ?>">Users</a>
+                        <a class="nav-link <?= @$title == "User" ? "active" : null ?> smoth-scroll" href="<?= base_url("admin/user") ?>">Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll"
-                            href="<?= base_url("admin/message") ?>">Message</a>
+                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll" href="<?= base_url("admin/message") ?>">Message</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Profile" ? "active" : null ?> smoth-scroll"
-                            href="<?= base_url("admin/profile") ?>">Profile</a>
+                        <a class="nav-link <?= @$title == "Profile" ? "active" : null ?> smoth-scroll" href="<?= base_url("admin/profile") ?>">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link smoth-scroll" href="<?= base_url("logout") ?>">Logout</a>
