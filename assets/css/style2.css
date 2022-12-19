@@ -5,18 +5,19 @@
 	justify-content: center;
 	padding: 20px 0px 20px 0px;
 	margin-bottom: 20px;
+	border: 3px black;
 }
 
 .containerSearch form {
 	background: #fff;
-	width: 550px;
+	width: 100%;
 	height: 45px;
 	display: flex;
 }
 
 .containerSearch form input {
 	flex: 1;
-	margin-left: 20px;
+	margin-left: 40px;
 	height: 45px;
 	border: none;
 	outline: none;
@@ -30,4 +31,11 @@
 	color: #fff;
 	letter-spacing: 1px;
 	cursor: pointer;
+}
+
+.borderless {
+	border-top-style: none !important;
+	border-left-style: none !important;
+	border-right-style: none !important;
+	border-bottom-style: none !important;
 }

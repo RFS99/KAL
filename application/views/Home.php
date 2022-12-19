@@ -132,92 +132,125 @@
 
     <!--  GENRE AND STUDIO START  -->
 
+
     <section id="about" class="bg-light">
         <section id="service">
+
             <!-- search section start -->
             <div class="containerSearch">
-                <form>
-                    <input type="text" placeholder="Search anime . . .">
-                    <button type="submit"> Search</button>
-                </form>
-            </div>
-            <!-- search section end -->
-            <div class="container" style="padding: 10px;">
-                <div class="col-lg-20 col-sm-20 col-md-20">
-                    <a type="submit" href="">Action</a>
-                    <a type="submit" href="">Adventure</a>
-                    <a type="submit" href="">Comedy</a>
-                    <a type="submit" href="">Detective</a>
-                    <a type="submit" href="">Drama</a>
-                    <a type="submit" href="">Fantasy</a>
-                    <a type="submit" href="">Harem</a>
-                    <a type="submit" href="">Horror</a>
-                    <a type="submit" href="">Historical</a>
-                    <a type="submit" href="">Isekai</a>
-                    <a type="submit" href="">Mahou Shoujo</a>
-                    <a type="submit" href="">Martial Arts</a>
-                    <a type="submit" href="">Mecha</a>
-                    <a type="submit" href="">Military</a>
-                    <a type="submit" href="">Mystery</a>
-                    <a type="submit" href="">Music</a>
-                    <a type="submit" href="">Parody</a>
-                    <a type="submit" href="">Psychological</a>
-                    <a type="submit" href="">Romance</a>
-                    <a type="submit" href="">School</a>
-                    <a type="submit" href="">Sci-Fi</a>
-                    <a type="submit" href="">Slice of Life</a>
-                    <a type="submit" href="">Sports</a>
-                    <a type="submit" href="">Supernatural</a>
-                    <a type="submit" href="">Super Power</a>
-                    <a type="submit" href="">Vampire</a>
+                <div class="card container">
+                    <div class="card-body">
 
+                        <form style="margin-bottom: 10px;">
+                            <input type="text" placeholder="Search anime . . . ">
+                            <button type="submit">Search</button>
+                        </form>
+
+                        <table class="table borderless">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Genre</th>
+                                    <td class="text-left"><a type="submit" href="">Action</a></td>
+                                    <td class="text-left"><a type="submit" href="">Adventure</a></td>
+                                    <td class="text-left"><a type="submit" href="">Comedy</a></td>
+                                    <td class="text-left"><a type="submit" href="">Detective</a></td>
+                                    <td class="text-left"><a type="submit" href="">Drama</a></td>
+                                    <td class="text-left"><a type="submit" href="">Fantasy</a></td>
+                                    <td class="text-left"><a type="submit" href="">Harem</a></td>
+                                    <td class="text-left"><a type="submit" href="">Horror</a></td>
+                                    <td class="text-left"><a type="submit" href="">Historical</a></td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"> </th>
+                                    <td class="text-left"><a type="submit" href="">Isekai</a></td>
+                                    <td class="text-left"><a type="submit" href="">Mahou Shoujo</a></td>
+                                    <td class="text-left"><a type="submit" href="">Martial Arts</a></td>
+                                    <td class="text-left"><a type="submit" href="">Mecha</a></td>
+                                    <td class="text-left"><a type="submit" href="">Military</a></td>
+                                    <td class="text-left"><a type="submit" href="">Mystery</a></td>
+                                    <td class="text-left"><a type="submit" href="">Music</a></td>
+                                    <td class="text-left"><a type="submit" href="">Parody</a></td>
+                                    <td class="text-left"><a type="submit" href="">Psychological</a></td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"> </th>
+                                    <td class="text-left"><a type="submit" href="">Romance</a></td>
+                                    <td class="text-left"><a type="submit" href="">School</a></td>
+                                    <td class="text-left"><a type="submit" href="">Sci</a></td>
+                                    <td class="text-left"><a type="submit" href="">Slice of Life</a></td>
+                                    <td class="text-left"><a type="submit" href="">Sports</a></td>
+                                    <td class="text-left"><a type="submit" href="">Supernatural</a></td>
+                                    <td class="text-left"><a type="submit" href="">Super Power</a></td>
+                                    <td class="text-left"><a type="submit" href="">Vampire</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <hr>
+                        <!-- STUDIO -->
+
+                        <table class="table borderless">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Studio</th>
+                                    <td class="text-left"><a type="submit" href="">8bit</a></td>
+                                    <td class="text-left"><a type="submit" href="">8PAN</a></td>
+                                    <td class="text-left"><a type="submit" href="">10 Gauge</a></td>
+                                    <td class="text-left"><a type="submit" href="">1IN</a></td>
+                                    <td class="text-left"><a type="submit" href="">AIC</a></td>
+                                    <td class="text-left"><a type="submit" href="">A-1 Pictures</a></td>
+                                    <td class="text-left"><a type="submit" href="">Actas</a></td>
+                                    <td class="text-left"><a type="submit" href="">Asahi P</a></td>
+                                    <td class="text-left"><a type="submit" href="">Bones</a></td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"> </th>
+                                    <td class="text-left"><a type="submit" href="">BS11</a></td>
+                                    <td class="text-left"><a type="submit" href="">Brain's Base</a></td>
+                                    <td class="text-left"><a type="submit" href="">BS Fuji </a></td>
+                                    <td class="text-left"><a type="submit" href="">Bandai NP</a></td>
+                                    <td class="text-left"><a type="submit" href="">Bridge</a></td>
+                                    <td class="text-left"><a type="submit" href="">CloverWorks</a></td>
+                                    <td class="text-left"><a type="submit" href="">DLE</a></td>
+                                    <td class="text-left"><a type="submit" href="">Doga Kobo</a></td>
+                                    <td class="text-left"><a type="submit" href="">Diomedéa</a></td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"> </th>
+                                    <td class="text-left"><a type="submit" href="">David P</a></td>
+                                    <td class="text-left"><a type="submit" href="">EMT Square</a></td>
+                                    <td class="text-left"><a type="submit" href="">feel</a></td>
+                                    <td class="text-left"><a type="submit" href="">Fanworks</a></td>
+                                    <td class="text-left"><a type="submit" href="">J.C.Staff</a></td>
+                                    <td class="text-left"><a type="submit" href="">KyoAni</a></td>
+                                    <td class="text-left"><a type="submit" href="">Madhouse</a></td>
+                                    <td class="text-left"><a type="submit" href="">MAPPA</a></td>
+                                    <td class="text-left"><a type="submit" href="">OLM</a></td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"> </th>
+                                    <td class="text-left"><a type="submit" href="">Pierrot</a></td>
+                                    <td class="text-left"><a type="submit" href="">Studio Deen</a></td>
+                                    <td class="text-left"><a type="submit" href="">Studio Gibli</a></td>
+                                    <td class="text-left"><a type="submit" href="">Shaft</a></td>
+                                    <td class="text-left"><a type="submit" href="">Toei Animation</a></td>
+                                    <td class="text-left"><a type="submit" href="">Ufotable</a></td>
+                                    <td class="text-left"><a type="submit" href="">Wit Studio</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="col-lg-20 col-sm-20 col-md-20">
-                    <a type="submit" href="">8bit</a>
-                    <a type="submit" href="">8PAN</a>
-                    <a type="submit" href="">10 Gauge</a>
-                    <a type="submit" href="">1IN</a>
-                    <a type="submit" href="">AIC</a>
-                    <a type="submit" href="">A-1 Pictures</a>
-                    <a type="submit" href="">Actas</a>
-                    <a type="submit" href="">Asahi Production</a>
-                    <a type="submit" href="">Bones </a>
-                    <a type="submit" href="">BS11</a>
-                    <a type="submit" href="">Brain's Base</a>
-                    <a type="submit" href="">BS Fuji </a>
-                    <a type="submit" href="">Bandai Namco Pictures</a>
-                    <a type="submit" href="">Bridge</a>
-                    <a type="submit" href="">CloverWorks</a>
-                    <a type="submit" href="">DLE</a>
-                    <a type="submit" href="">Doga Kobo</a>
-                    <a type="submit" href="">Diomedéa</a>
-                    <a type="submit" href="">David Production</a>
-                    <a type="submit" href="">EMT Squared</a>
-                    <a type="submit" href="">feel.</a>
-                    <a type="submit" href="">Fanworks</a>
-                    <a type="submit" href="">J.C.Staff</a>
-                    <a type="submit" href="">Kyoto Animation</a>
-                    <a type="submit" href="">Madhouse</a>
-                    <a type="submit" href="">MAPPA</a>
-                    <a type="submit" href="">OLM </a>
-                    <a type="submit" href="">Pierrot</a>
-                    <a type="submit" href="">Studio Deen</a>
-                    <a type="submit" href="">Studio Gibli</a>
-                    <a type="submit" href="">Shaft</a>
-                    <a type="submit" href="">Toei Animation</a>
-                    <a type="submit" href="">Ufotable</a>
-                    <a type="submit" href="">Wit Studio</a>
 
-                </div>
-            </div>
-
-
+        <!-- search section end -->
         </section>
-        <!--  GENRE AND STUDIO SECTION END-->
-
-
 
         <!--  CONTACT START  -->
         <section id="contact" class="section-padding ">
