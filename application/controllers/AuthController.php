@@ -163,7 +163,7 @@ class AuthController extends CI_Controller
 		];
 
 		/* insert user */
-		$user_id = $this->mod->insertid('users', $data);
+		$user_id = $this->mod->insertid('admin', $data);
 
 		$token = md5(date("Y-m-d H:i:s") . $email);
 		/* insert token */
@@ -202,7 +202,7 @@ class AuthController extends CI_Controller
 				"user_status"   => 1,
 				"updated_at"	=> date("Y-m-d H:i:s")
 			];
-			$this->mod->update('users', $user_data, ["id" => $user_id]);
+			$this->mod->update('admin', $user_data, ["id" => $user_id]);
 
 
 			$data = [

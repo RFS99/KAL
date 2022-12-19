@@ -139,7 +139,7 @@ class AdminController extends CI_Controller
 		];
 
 		/* insert user */
-		$this->mod->insert('users', $data);
+		$this->mod->insert('admin', $data);
 		$this->result['status']  = "done";
 		$this->result['message'] = "Berhasil menambahkan user.";
         $this->result['data'] = [];
@@ -163,7 +163,7 @@ class AdminController extends CI_Controller
 		];
 
 		/* update user */
-		$this->mod->update("users", $data, ["id"=>$user_id]);
+		$this->mod->update("admin", $data, ["id"=>$user_id]);
 
 		$this->result['status']  = "done";
 		$this->result['data'] = [];
@@ -188,7 +188,7 @@ class AdminController extends CI_Controller
 		];
 
 		/* update user */
-		$this->mod->update("users", $data, ["id"=>$user_id]);
+		$this->mod->update("admin", $data, ["id"=>$user_id]);
 
 		$this->result['status']  = "done";
 		$this->result['data'] = [];
@@ -212,7 +212,7 @@ class AdminController extends CI_Controller
 		];
 
 		/* update user */
-		$this->mod->update("users", $data, ["id"=>$user_id]);
+		$this->mod->update("admin", $data, ["id"=>$user_id]);
 
 		$this->result['status']  = "done";
 		$this->result['data'] = [];
