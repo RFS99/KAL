@@ -12,24 +12,24 @@
 
     <title>Home - Kimi no AnimeList</title>
     <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="<?= base_url('assets/plugins/bootstrap/css/bootstrap.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/bootstrap/css/bootstrap.css?v=1.1') ?>">
     <!-- Icofont Css -->
-    <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome/css/all.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome/css/all.css?v=1.1') ?>">
     <!-- animate.css -->
-    <link rel="stylesheet" href="<?= base_url('assets/plugins/animate-css/animate.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/animate-css/animate.css?v=1.1') ?>">
     <!-- Icofont -->
-    <link rel="stylesheet" href="<?= base_url('assets/plugins/icofont/icofont.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/icofont/icofont.css?v=1.1') ?>">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/style2.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/style3.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css?v=1.1') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style2.css?v=1.1') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style3.css?v=1.1') ?>">
 
 
     <!-- Alertify -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css?v=1.1" />
     <!-- Alertify Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css?v=1.1" />
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -85,24 +85,13 @@
                     <div class="row">
                         <div class="col-lg-8 m-auto text-center col-sm-12 col-md-12">
                             <div class="banner-content content-padding">
-                                <h3 class="subtitle wadaw">KAL</h3>
-
-                                <!-- search section start -->
-                                <div class="containerSearch">
-                                    <form>
-                                        <input type="text" placeholder="Search anime . . .">
-                                        <button type="submit"> Search</button>
-                                    </form>
-                                </div>
-                                <!-- search section end -->
-
                                 <!-- banner section start -->
                                 <div class="banner_section layout_padding">
                                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="container">
-                                                    <h1 class="banner-title">Adventure</h1>
+                                                    <h1 class="banner-title">KAL</h1>
                                                     <p class="banner_text">There are many variations of passages of
                                                         Lorem Ipsum available, but the majority have sufferedThere are
                                                         ma available, but the majority have suffered</p>
@@ -110,7 +99,7 @@
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <h1 class="banner-title">Adventure</h1>
+                                                    <h1 class="banner-title">KAL</h1>
                                                     <p class="banner_text">There are many variations of passages of
                                                         Lorem Ipsum available, but the majority have sufferedThere are
                                                         ma available, but the majority have suffered</p>
@@ -118,7 +107,7 @@
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <h1 class="banner-title">Adventure</h1>
+                                                    <h1 class="banner-title">KAL</h1>
                                                     <p class="banner_text">There are many variations of passages of
                                                         Lorem Ipsum available, but the majority have sufferedThere are
                                                         ma available, but the majority have suffered</p>
@@ -141,71 +130,92 @@
     </div>
     <!--MAIN HEADER AREA END -->
 
-    <!--  GENRE START  -->
+    <!--  GENRE AND STUDIO START  -->
 
     <section id="about" class="bg-light">
         <section id="service">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                        <div class="service-box">
+            <!-- search section start -->
+            <div class="containerSearch">
+                <form>
+                    <input type="text" placeholder="Search anime . . .">
+                    <button type="submit"> Search</button>
+                </form>
+            </div>
+            <!-- search section end -->
+            <div class="container" style="padding: 10px;">
+                <div class="col-lg-20 col-sm-20 col-md-20">
+                    <a type="submit" href="">Action</a>
+                    <a type="submit" href="">Adventure</a>
+                    <a type="submit" href="">Comedy</a>
+                    <a type="submit" href="">Detective</a>
+                    <a type="submit" href="">Drama</a>
+                    <a type="submit" href="">Fantasy</a>
+                    <a type="submit" href="">Harem</a>
+                    <a type="submit" href="">Horror</a>
+                    <a type="submit" href="">Historical</a>
+                    <a type="submit" href="">Isekai</a>
+                    <a type="submit" href="">Mahou Shoujo</a>
+                    <a type="submit" href="">Martial Arts</a>
+                    <a type="submit" href="">Mecha</a>
+                    <a type="submit" href="">Military</a>
+                    <a type="submit" href="">Mystery</a>
+                    <a type="submit" href="">Music</a>
+                    <a type="submit" href="">Parody</a>
+                    <a type="submit" href="">Psychological</a>
+                    <a type="submit" href="">Romance</a>
+                    <a type="submit" href="">School</a>
+                    <a type="submit" href="">Sci-Fi</a>
+                    <a type="submit" href="">Slice of Life</a>
+                    <a type="submit" href="">Sports</a>
+                    <a type="submit" href="">Supernatural</a>
+                    <a type="submit" href="">Super Power</a>
+                    <a type="submit" href="">Vampire</a>
 
-                            <div class="service-inner">
-                                <h4>Video Marketing</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                        <div class="service-box ">
-
-                            <div class="service-inner">
-                                <h4>Email Marketing</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                        <div class="service-box">
-
-                            <div class="service-inner">
-                                <h4>SEO optimization</h4>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                        <div class="service-box">
-
-                            <div class="service-inner">
-                                <h4>Custom Website</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                        <div class="service-box">
-
-                            <div class="service-inner">
-                                <h4>Content Growth</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                        <div class="service-box">
-
-                            <div class="service-inner">
-                                <h4>Link Building </h4>
-
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+            <div class="container">
+                <div class="col-lg-20 col-sm-20 col-md-20">
+                    <a type="submit" href="">8bit</a>
+                    <a type="submit" href="">8PAN</a>
+                    <a type="submit" href="">10 Gauge</a>
+                    <a type="submit" href="">1IN</a>
+                    <a type="submit" href="">AIC</a>
+                    <a type="submit" href="">A-1 Pictures</a>
+                    <a type="submit" href="">Actas</a>
+                    <a type="submit" href="">Asahi Production</a>
+                    <a type="submit" href="">Bones </a>
+                    <a type="submit" href="">BS11</a>
+                    <a type="submit" href="">Brain's Base</a>
+                    <a type="submit" href="">BS Fuji </a>
+                    <a type="submit" href="">Bandai Namco Pictures</a>
+                    <a type="submit" href="">Bridge</a>
+                    <a type="submit" href="">CloverWorks</a>
+                    <a type="submit" href="">DLE</a>
+                    <a type="submit" href="">Doga Kobo</a>
+                    <a type="submit" href="">Diomedéa</a>
+                    <a type="submit" href="">David Production</a>
+                    <a type="submit" href="">EMT Squared</a>
+                    <a type="submit" href="">feel.</a>
+                    <a type="submit" href="">Fanworks</a>
+                    <a type="submit" href="">J.C.Staff</a>
+                    <a type="submit" href="">Kyoto Animation</a>
+                    <a type="submit" href="">Madhouse</a>
+                    <a type="submit" href="">MAPPA</a>
+                    <a type="submit" href="">OLM </a>
+                    <a type="submit" href="">Pierrot</a>
+                    <a type="submit" href="">Studio Deen</a>
+                    <a type="submit" href="">Studio Gibli</a>
+                    <a type="submit" href="">Shaft</a>
+                    <a type="submit" href="">Toei Animation</a>
+                    <a type="submit" href="">Ufotable</a>
+                    <a type="submit" href="">Wit Studio</a>
+
+                </div>
+            </div>
+
+
         </section>
-        <!--  GENRE SECTION END-->
+        <!--  GENRE AND STUDIO SECTION END-->
 
 
 

@@ -9,40 +9,31 @@ header('Access-Control-Allow-Origin: *');
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="PISH">
-    <meta name="keywords" content="PISH">
-    <meta name="author" content="PISH">
+    <meta name="description" content="seo & digital marketing">
+    <meta name="keywords"
+        content="marketing,digital marketing,creative, agency, startup,promodise,onepage, clean, modern,seo,business, company">
+    <meta name="author" content="Themefisher.com">
 
-    <title>PISH | <?= @$title ?></title>
+    <title>Home - Kimi no AnimeList</title>
     <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="<?= base_url('assets/plugins/bootstrap/css/bootstrap.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/bootstrap/css/bootstrap.css?v=1.1') ?>">
     <!-- Icofont Css -->
-    <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome/css/all.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome/css/all.css?v=1.1') ?>">
     <!-- animate.css -->
-    <link rel="stylesheet" href="<?= base_url('assets/plugins/animate-css/animate.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/animate-css/animate.css?v=1.1') ?>">
     <!-- Icofont -->
-    <link rel="stylesheet" href="<?= base_url('assets/plugins/icofont/icofont.css') ?>">
-
-    <!-- Datatable -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/icofont/icofont.css?v=1.1') ?>">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css?v=1.1') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style2.css?v=1.1') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style3.css?v=1.1') ?>">
+
 
     <!-- Alertify -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css?v=1.1" />
     <!-- Alertify Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
-
-    <?php
-    if (isset($css)) {
-        foreach ($css as $css) {
-            echo "<link type=\"text/css\" href=\"{$css}\" />" . "\r\n";
-        }
-    }
-    ?>
-
-
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css?v=1.1" />
 </head>
 
 
@@ -52,8 +43,10 @@ header('Access-Control-Allow-Origin: *');
 
     <nav class="navbar navbar-expand-lg fixed-top trans-navigation header-white">
         <div class="container">
-            <a class="navbar-brand" href="<?= base_url('admin') ?>"><img src="assets/images/Logo2.png" alt="" class=" PISH"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="<?= base_url('admin') ?>"><img src="assets/images/Logo2.png" alt=""
+                    class=" PISH"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
                     <i class="fa fa-bars"></i>
                 </span>
@@ -62,11 +55,13 @@ header('Access-Control-Allow-Origin: *');
             <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Dashboard" ? "active" : null ?> smoth-scroll" href="<?= base_url("user") ?>">Home
+                        <a class="nav-link <?= @$title == "Dashboard" ? "active" : null ?> smoth-scroll"
+                            href="<?= base_url("user") ?>">Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Profile" ? "active" : null ?> smoth-scroll" href="<?= base_url('user/profile') ?>">Profile</a>
+                        <a class="nav-link <?= @$title == "Profile" ? "active" : null ?> smoth-scroll"
+                            href="<?= base_url('user/profile') ?>">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link smoth-scroll" href="<?= base_url('logout') ?>">Logout</a>
