@@ -92,9 +92,8 @@
                                             <div class="carousel-item active">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
-                                                    <p class="banner_text">There are many variations of passages of
-                                                        Lorem Ipsum available, but the majority have sufferedThere are
-                                                        ma available, but the majority have suffered</p>
+                                                    <p class="banner_text">Kamu bisa menceri anime dengan mengetik judul
+                                                        di dalam kotak pencarian</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
@@ -119,7 +118,7 @@
                                 </div>
                                 <!-- banner section end -->
 
-                                <a href="<?= base_url('user') ?>" class="btn btn-white btn-circled">LETS START</a>
+                                <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled">LETS START</a>
 
                             </div>
                         </div>
@@ -173,7 +172,7 @@
                                     <td class="text-left"><a type="submit" href="">Parody</a></td>
                                     <td class="text-left"><a type="submit" href="">Psychological</a></td>
                                 </tr>
-                                
+
                                 <tr>
                                     <th scope="row"> </th>
                                     <td class="text-left"><a type="submit" href="">Romance</a></td>
@@ -187,7 +186,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <hr>
                         <!-- STUDIO -->
 
@@ -218,7 +217,7 @@
                                     <td class="text-left"><a type="submit" href="">Doga Kobo</a></td>
                                     <td class="text-left"><a type="submit" href="">Diomedéa</a></td>
                                 </tr>
-                                
+
                                 <tr>
                                     <th scope="row"> </th>
                                     <td class="text-left"><a type="submit" href="">David P</a></td>
@@ -244,12 +243,12 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                     </div>
                 </div>
             </div>
 
-        <!-- search section end -->
+            <!-- search section end -->
         </section>
 
         <!--  CONTACT START  -->
