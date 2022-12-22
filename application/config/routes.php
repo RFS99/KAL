@@ -83,6 +83,7 @@ $route['input_cs']             = 'UserController/inputCS';
 
 /******* Home *******/
 $route['contact/save']         = 'Home/contact_save';
+$route['web-scraping']         = 'Home/scraping';
 
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
