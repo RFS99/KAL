@@ -1,0 +1,17 @@
+vendor
+!public/vendor
+node_modules
+.vscode
+composer.phar
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+yarn.lock
+composer.lock
+composer-setup.php
+package-lock.json
+.DS_Store

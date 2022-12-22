@@ -8,7 +8,6 @@ class ComposerStaticInitc8b735e08b5117708c6c62fe53f20164
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
@@ -38,6 +37,7 @@ class ComposerStaticInitc8b735e08b5117708c6c62fe53f20164
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
             'Symfony\\Polyfill\\Iconv\\' => 23,
+            'StringEncoder\\' => 14,
         ),
         'P' => 
         array (
@@ -98,9 +98,14 @@ class ComposerStaticInitc8b735e08b5117708c6c62fe53f20164
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
         ),
+        'StringEncoder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/1foru/string-encode/src/StringEncoder',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -112,7 +117,7 @@ class ComposerStaticInitc8b735e08b5117708c6c62fe53f20164
         ),
         'PHPHtmlParser\\' => 
         array (
-            0 => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser',
+            0 => __DIR__ . '/..' . '/1foru/php-html-parser/src/PHPHtmlParser',
         ),
         'MyCLabs\\Enum\\' => 
         array (
@@ -149,13 +154,6 @@ class ComposerStaticInitc8b735e08b5117708c6c62fe53f20164
     );
 
     public static $prefixesPsr0 = array (
-        's' => 
-        array (
-            'stringEncode' => 
-            array (
-                0 => __DIR__ . '/..' . '/paquettg/string-encode/src',
-            ),
-        ),
         'o' => 
         array (
             'org\\bovigo\\vfs\\' => 

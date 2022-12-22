@@ -146,7 +146,97 @@ class Home extends CI_Controller
 	}
 
 	public function scraping(){
-		$dom = new PHPHtmlParser\Dom;
-		$html = new Sunra\PhpSimple\HtmlDomParser;
+		$domClass = new PHPHtmlParser\Dom;
+		$domClass->loadFromFile(FCPATH. 'assets/Summer 2022 - Anime - MyAnimeList.net.html');
+
+		$contents = $domClass->find('body');
+		
+		$data = [];
+		/* Scraping Data dan masukkan ke dalam array */
+		foreach($contents->find('div.js-anime-category-producer') as $val){
+			$domClass->loadStr($val);
+			/* Judul */
+			$en = $domClass->find('div.title-text h3.h3_anime_subtitle')[0];
+			$jp = $domClass->find('div.title-text h2.h2_anime_title a')[0];
+
+			$title = "";
+			if(!empty($en)){
+				$title = @$en->text;
+			}else{
+				$title = @$jp->text;
+			}
+
+			/* Deskripsi / Sinopsis */
+			$detailDom = $domClass->find('div.synopsis.js-synopsis');
+			$descDom = $detailDom->find('p.preline')[0];
+			$description = @$descDom->text;
+
+			/* Genre */
+			$genreArr = [];
+			$studioArr = [];
+			$genreDom = $domClass->find('div.genres.js-genre');
+			foreach($genreDom->find('.genres-inner.js-genre-inner span.genre') as $gnr){
+				$domClass->loadStr($gnr);
+				if(!empty($gnr)){
+					$g = $domClass->find('a');
+					$genreText = $g->text;
+					array_push($genreArr, $genreText);
+				}
+			}
+			/* Theme */
+			$propDom = $detailDom->find('.properties');
+			foreach($propDom->find('div.property') as $detail){
+				$domClass->loadStr($detail);
+				$captioDom = $domClass->find('div.property span.caption');
+				$captionText = @$captioDom->text;
+
+				if(!empty($captionText)){
+					/* Studio */
+					if(strtolower($captionText) == 'studio' || strtolower($captionText) == 'studios'){
+						foreach($domClass->find('div.property span.item') as $std){
+							$domClass->loadStr($std);
+							$studioEmpty = @$std->text;
+							
+							$studio = "";
+							if(empty($studioEmpty) ){
+								$studioDom = $domClass->find('a');
+								$studioText = @$studioDom->text;
+								$studio = $studioText;
+							}else{
+								$studio = $studioEmpty;
+							}
+							array_push($studioArr, $studio);
+						}
+					}else if(strtolower($captionText) == 'theme' || strtolower($captionText) == 'themes'){
+						foreach($domClass->find('div.property span.item') as $thm){
+							$domClass->loadStr($thm);
+							$themeEmpty = @$thm->text;
+							
+							$theme = "";
+							if(empty($themeEmpty) ){
+								$themeDom = $domClass->find('a');
+								$themeText = @$themeDom->text;
+								$theme = $themeText;
+							}
+							array_push($genreArr, $theme);
+						}
+					}
+				}
+			}
+
+			/* Insert ke dalam array */
+			$anime = [
+				"title" => $title,
+				"description" => $description,
+				"studio" => $studioArr,
+				"genre" => $genreArr
+			];
+			array_push($data, $anime);
+		}
+
+		/* Masukkan ke Dalam Database */
+		foreach($data as $anime){
+
+		}
 	}
 }
