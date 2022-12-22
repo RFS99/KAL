@@ -88,8 +88,8 @@
                                             <div class="carousel-item active">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
-                                                    <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
-                                                        form pencarian</p>
+                                                    <p class="banner_text">Kamu bisa menceri anime dengan mengetik judul
+                                                        di dalam kotak pencarian</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
@@ -111,9 +111,7 @@
 
                                 </div>
                                 <!-- banner section end -->
-
-                                <a href="<?= base_url('user') ?>" class="btn btn-white btn-circled wadaw">LETS START</a>
-
+                                <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled">LETS START</a>
                             </div>
                         </div>
                     </div>
