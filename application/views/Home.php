@@ -33,7 +33,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
-
+	<div id="loader"><div class="loading-app"></div></div>
     <nav class="navbar navbar-expand-lg fixed-top trans-navigation bl">
         <div class="container">
             <img src="assets/images/Logo2.png" alt="" class=" PISH">
@@ -142,43 +142,22 @@
                         <hr>
                         <table class="table borderless">
                             <tbody>
-                                <tr>
-                                    <th scope="row">Genre</th>
-                                    <td class="text-left"><a type="submit" href="">Action</a></td>
-                                    <td class="text-left"><a type="submit" href="">Adventure</a></td>
-                                    <td class="text-left"><a type="submit" href="">Comedy</a></td>
-                                    <td class="text-left"><a type="submit" href="">Detective</a></td>
-                                    <td class="text-left"><a type="submit" href="">Drama</a></td>
-                                    <td class="text-left"><a type="submit" href="">Fantasy</a></td>
-                                    <td class="text-left"><a type="submit" href="">Harem</a></td>
-                                    <td class="text-left"><a type="submit" href="">Horror</a></td>
-                                    <td class="text-left"><a type="submit" href="">Historical</a></td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row"> </th>
-                                    <td class="text-left"><a type="submit" href="">Isekai</a></td>
-                                    <td class="text-left"><a type="submit" href="">Mahou Shoujo</a></td>
-                                    <td class="text-left"><a type="submit" href="">Martial Arts</a></td>
-                                    <td class="text-left"><a type="submit" href="">Mecha</a></td>
-                                    <td class="text-left"><a type="submit" href="">Military</a></td>
-                                    <td class="text-left"><a type="submit" href="">Mystery</a></td>
-                                    <td class="text-left"><a type="submit" href="">Music</a></td>
-                                    <td class="text-left"><a type="submit" href="">Parody</a></td>
-                                    <td class="text-left"><a type="submit" href="">Psychological</a></td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row"> </th>
-                                    <td class="text-left"><a type="submit" href="">Romance</a></td>
-                                    <td class="text-left"><a type="submit" href="">School</a></td>
-                                    <td class="text-left"><a type="submit" href="">Sci</a></td>
-                                    <td class="text-left"><a type="submit" href="">Slice of Life</a></td>
-                                    <td class="text-left"><a type="submit" href="">Sports</a></td>
-                                    <td class="text-left"><a type="submit" href="">Supernatural</a></td>
-                                    <td class="text-left"><a type="submit" href="">Super Power</a></td>
-                                    <td class="text-left"><a type="submit" href="">Vampire</a></td>
-                                </tr>
+								<?php if(isset($genre_list) && $genre_list):
+									$a = 0;
+									foreach($genre_list as $row): $a++ ?>
+									<tr>
+										<th scope="row"><?=($a == 1) ? "Genres" : ""?></th>
+										<?php foreach($row as $genre): ?>
+											<td class="text-left"><?=@$genre->title?></td>
+										<?php endforeach; ?>
+									</tr>
+								<?php
+									endforeach;
+								else: ?>
+								<tr>
+									<td colspan="100%">Tidak ada data.</td>
+								</tr>
+								<?php endif; ?>
                             </tbody>
                         </table>
 
@@ -187,55 +166,24 @@
 
                         <table class="table borderless">
                             <tbody>
-                                <tr>
-                                    <th scope="row">Studio</th>
-                                    <td class="text-left"><a type="submit" href="">8bit</a></td>
-                                    <td class="text-left"><a type="submit" href="">8PAN</a></td>
-                                    <td class="text-left"><a type="submit" href="">10 Gauge</a></td>
-                                    <td class="text-left"><a type="submit" href="">1IN</a></td>
-                                    <td class="text-left"><a type="submit" href="">AIC</a></td>
-                                    <td class="text-left"><a type="submit" href="">A-1 Pictures</a></td>
-                                    <td class="text-left"><a type="submit" href="">Actas</a></td>
-                                    <td class="text-left"><a type="submit" href="">Asahi Prod</a></td>
-                                    <td class="text-left"><a type="submit" href="">Bones</a></td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row"> </th>
-                                    <td class="text-left"><a type="submit" href="">BS11</a></td>
-                                    <td class="text-left"><a type="submit" href="">Brain's Base</a></td>
-                                    <td class="text-left"><a type="submit" href="">BS Fuji </a></td>
-                                    <td class="text-left"><a type="submit" href="">Bandai NP</a></td>
-                                    <td class="text-left"><a type="submit" href="">Bridge</a></td>
-                                    <td class="text-left"><a type="submit" href="">CloverWorks</a></td>
-                                    <td class="text-left"><a type="submit" href="">DLE</a></td>
-                                    <td class="text-left"><a type="submit" href="">Doga Kobo</a></td>
-                                    <td class="text-left"><a type="submit" href="">Diomedéa</a></td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row"> </th>
-                                    <td class="text-left"><a type="submit" href="">David Prod</a></td>
-                                    <td class="text-left"><a type="submit" href="">EMT Square</a></td>
-                                    <td class="text-left"><a type="submit" href="">feel</a></td>
-                                    <td class="text-left"><a type="submit" href="">Fanworks</a></td>
-                                    <td class="text-left"><a type="submit" href="">J.C.Staff</a></td>
-                                    <td class="text-left"><a type="submit" href="">KyoAni</a></td>
-                                    <td class="text-left"><a type="submit" href="">Madhouse</a></td>
-                                    <td class="text-left"><a type="submit" href="">MAPPA</a></td>
-                                    <td class="text-left"><a type="submit" href="">OLM</a></td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row"> </th>
-                                    <td class="text-left"><a type="submit" href="">Pierrot</a></td>
-                                    <td class="text-left"><a type="submit" href="">Studio Deen</a></td>
-                                    <td class="text-left"><a type="submit" href="">Studio Gibli</a></td>
-                                    <td class="text-left"><a type="submit" href="">Shaft</a></td>
-                                    <td class="text-left"><a type="submit" href="">Toei Animation</a></td>
-                                    <td class="text-left"><a type="submit" href="">Ufotable</a></td>
-                                    <td class="text-left"><a type="submit" href="">Wit Studio</a></td>
-                                </tr>
+							<tbody>
+								<?php if(isset($studio_list) && $studio_list):
+									$a = 0;
+									foreach($studio_list as $row): $a++ ?>
+									<tr>
+										<th scope="row"><?=($a == 1) ? "Studios" : ""?></th>
+										<?php foreach($row as $studio): ?>
+											<td class="text-left"><?=@$studio->title?></td>
+										<?php endforeach; ?>
+									</tr>
+								<?php
+									endforeach;
+								else: ?>
+								<tr>
+									<td colspan="100%">Tidak ada data.</td>
+								</tr>
+								<?php endif; ?>
+                            </tbody>
                             </tbody>
                         </table>
 
@@ -402,6 +350,7 @@
             <script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
 
             <!-- home js -->
+			<script>var base = "<?=base_url()?>";</script>
             <script src="<?= base_url('assets/js/home.js') ?>"></script>
 </body>
 

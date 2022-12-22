@@ -75,3 +75,21 @@ $(function () {
 		);
 	});
 });
+$(document).ready(function(){
+    $.ajax({
+		url: base + "web-scraping",
+		dataType: "json",
+		beforeSend: function () {
+			$("#loader").css("display","block");
+		},
+        success: function(){
+			alertify.success("Berhasil memuat data.");
+        },
+		error: function () {
+			alertify.error("Oops... Terjadi kesalahan pada server.");
+		},
+		complete: function () {
+			$("#loader").css("display","none");
+		},
+    });
+});
