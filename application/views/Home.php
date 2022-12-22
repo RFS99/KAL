@@ -34,7 +34,7 @@
 
 <body data-spy="scroll" data-target=".fixed-top">
 
-    <nav class="navbar navbar-expand-lg fixed-top trans-navigation">
+    <nav class="navbar navbar-expand-lg fixed-top trans-navigation bl">
         <div class="container">
             <img src="assets/images/Logo2.png" alt="" class=" PISH">
 
@@ -58,10 +58,10 @@
                         <?php if ($is_session) : ?>
                         <?php if ($user_type == 0) : ?>
                         <!-- User -->
-                        <a class="nav-link smoth-scroll" href="<?= base_url('user') ?>">Login Admin</a>
+                        <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Admin</a>
                         <?php else : ?>
                         <!-- Admin -->
-                        <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Login Admin</a>
+                        <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Admin</a>
                         <?php endif; ?>
                         <?php else : ?>
                         <a class="nav-link smoth-scroll" href="<?= base_url('login') ?>">Login Admin</a>
@@ -88,7 +88,7 @@
                                             <div class="carousel-item active">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
-                                                    <p class="banner_text">Kamu bisa menceri anime dengan mengetik judul
+                                                    <p class="banner_text">Kamu bisa mencari anime dengan mengetik judul
                                                         di dalam kotak pencarian</p>
                                                 </div>
                                             </div>
@@ -96,14 +96,14 @@
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
                                                     <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
-                                                        form pencarian</p>
+                                                        button genre</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
                                                     <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
-                                                        form pencarian</p>
+                                                        button studio</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -111,20 +111,22 @@
 
                                 </div>
                                 <!-- banner section end -->
-                                <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled">LETS START</a>
+                                <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled wadaw">LETS
+                                    START</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div><br><br>
     </div>
     <!--MAIN HEADER AREA END -->
 
     <!--  GENRE AND STUDIO START  -->
+    <br>
+    <br>
 
-
-    <section id="about" class="bg-light">
+    <section id="about" class="bg-light hmm">
         <section id="service">
 
             <!-- search section start -->
@@ -132,11 +134,12 @@
                 <div class="card container">
                     <div class="card-body ">
 
+                        <hr>
                         <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post">
                             <input type="text" placeholder="Search anime . . . ">
                             <button type="submit" class="wadaw">Search</button>
                         </form>
-
+                        <hr>
                         <table class="table borderless">
                             <tbody>
                                 <tr>
@@ -242,8 +245,9 @@
 
             <!-- search section end -->
         </section>
-
-        <section id="about" class="bg-light">
+        <br>
+        <br>
+        <section id="service" class="bg-light">
             <section id="service">
 
                 <!-- search section start -->
@@ -252,10 +256,9 @@
                         <div class="container">
                             <br>
                             <br>
-                            <br>
                             <h3>Anime</h3><br>
 
-                            <table border="2" class="table table-striped text-dark">
+                            <table border="1" class="table table-striped text-dark">
                                 <thead class="thead-dark">
                                     <tr>
                                         <th>No</th>
@@ -278,6 +281,7 @@
                                         <td><?= $no++; ?></td>
                                         <td><?= $data['Nama_Toko']; ?></td>
                                         <td><?= $data['Alamat_Toko']; ?></td>
+                                        <td><?= $data['no_telp']; ?></td>
                                         <td><?= $data['no_telp']; ?></td>
 
 

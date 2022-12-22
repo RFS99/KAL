@@ -1,44 +1,5 @@
 <body data-spy="scroll" data-target=".fixed-top">
 
-    <nav class="navbar navbar-expand-lg fixed-top trans-navigation">
-        <div class="container">
-            <img src="assets/images/Logo2.png" alt="" class=" PISH">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-                    <i class="fa fa-bars"></i>
-                </span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-                <ul class="navbar-nav ">
-                    <li class="nav-item">
-                        <a class="nav-link active smoth-scroll" href=".banner-area">Home <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <?php if ($is_session) : ?>
-                        <?php if ($user_type == 0) : ?>
-                        <!-- User -->
-                        <a class="nav-link smoth-scroll" href="<?= base_url('user') ?>">Login Admin</a>
-                        <?php else : ?>
-                        <!-- Admin -->
-                        <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Login Admin</a>
-                        <?php endif; ?>
-                        <?php else : ?>
-                        <a class="nav-link smoth-scroll" href="<?= base_url('login') ?>">Login Admin</a>
-                        <?php endif; ?>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!--MAIN HEADER AREA END -->
-
     <!--MAIN BANNER AREA -->
     <div class="banner-area bg">
         <div class="d-table">
@@ -54,22 +15,22 @@
                                             <div class="carousel-item active">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
-                                                    <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
-                                                        form pencarian</p>
+                                                    <p class="banner_text">Kamu bisa mencari anime dengan mengetik judul
+                                                        di dalam kotak pencarian</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
                                                     <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
-                                                        form pencarian</p>
+                                                        button genre</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
                                                     <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
-                                                        form pencarian</p>
+                                                        button studio</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -77,22 +38,22 @@
 
                                 </div>
                                 <!-- banner section end -->
-
-                                <a href="<?= base_url('user') ?>" class="btn btn-white btn-circled wadaw">LETS START</a>
-
+                                <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled wadaw">LETS
+                                    START</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div><br><br>
     </div>
     <!--MAIN HEADER AREA END -->
 
     <!--  GENRE AND STUDIO START  -->
+    <br>
+    <br>
 
-
-    <section id="about" class="bg-light">
+    <section id="about" class="bg-light hmm">
         <section id="service">
 
             <!-- search section start -->
@@ -100,11 +61,12 @@
                 <div class="card container">
                     <div class="card-body ">
 
-                        <form style="margin-bottom: 10px; ">
+                        <hr>
+                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post">
                             <input type="text" placeholder="Search anime . . . ">
                             <button type="submit" class="wadaw">Search</button>
                         </form>
-
+                        <hr>
                         <table class="table borderless">
                             <tbody>
                                 <tr>
@@ -210,16 +172,58 @@
 
             <!-- search section end -->
         </section>
-
-        <section id="about" class="bg-light">
+        <br>
+        <br>
+        <section id="service" class="bg-light">
             <section id="service">
 
                 <!-- search section start -->
-                <div class="containerSearch">
-                    <div class="card container">
-                        <div class="card-body ">
+                <div class="card container">
+                    <div class="card-body ">
+                        <div class="container">
+                            <br>
+                            <br>
+                            <h3>Anime</h3><br>
+
+                            <table border="1" class="table table-striped text-dark">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Judul Anime</th>
+                                        <th>Sinopsis</th>
+                                        <th>Genre</th>
+                                        <th>Studio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    $no = 1;
+
+                                    if (isset($toko_ikan)) {
+                                        foreach ($anime as $data) :
+                                    ?>
+
+                                            <tr>
+                                                <td><?= $no++; ?></td>
+                                                <td><?= $data['Nama_Toko']; ?></td>
+                                                <td><?= $data['Alamat_Toko']; ?></td>
+                                                <td><?= $data['no_telp']; ?></td>
+                                                <td><?= $data['no_telp']; ?></td>
 
 
+
+                                            </tr>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    <?php
+
+                                    }
+                                    ?>
+                                </tbody>
+
+                            </table>
                         </div>
                     </div>
                 </div>

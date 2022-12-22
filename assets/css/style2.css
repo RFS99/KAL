@@ -78,10 +78,18 @@ body .bg {
 .table .thead-dark th {
 	color: #fff;
 	background-color: rgb(4, 100, 190) !important;
-	border-color: rgb(4, 100, 190) !important;
+	border-color: black !important;
 }
 
 .table thead th {
 	vertical-align: bottom;
-	border-bottom: 2px solid rgb(4, 100, 190) !important;
+	border-bottom: 2px solid black !important;
+}
+
+.hmm {
+	margin-top: 100px;
+}
+
+.bl:hover {
+	background-color: black;
 }

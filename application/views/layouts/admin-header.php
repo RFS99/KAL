@@ -10,7 +10,8 @@ header('Access-Control-Allow-Origin: *');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="seo & digital marketing">
-    <meta name="keywords" content="marketing,digital marketing,creative, agency, startup,promodise,onepage, clean, modern,seo,business, company">
+    <meta name="keywords"
+        content="marketing,digital marketing,creative, agency, startup,promodise,onepage, clean, modern,seo,business, company">
     <meta name="author" content="Themefisher.com">
 
     <title>Home - Kimi no AnimeList</title>
@@ -40,10 +41,12 @@ header('Access-Control-Allow-Origin: *');
 
 
 
-    <nav class="navbar navbar-expand-lg fixed-top trans-navigation header-white">
+    <nav class="navbar navbar-expand-lg fixed-top trans-navigation header-white bl">
         <div class="container">
-            <a class="navbar-brand" href="<?= base_url('admin') ?>"><img src="assets/images/Logo2.png" alt="" class=" PISH"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="<?= base_url('admin') ?>"><img src="assets/images/Logo2.png" alt=""
+                    class=" PISH"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
                     <i class="fa fa-bars"></i>
                 </span>
@@ -52,17 +55,21 @@ header('Access-Control-Allow-Origin: *');
             <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Dashboard" ? "active" : null ?> smoth-scroll" href="<?= base_url('admin') ?>">Home</a>
+                        <a class="nav-link <?= @$title == "Dashboard" ? "active" : null ?> smoth-scroll"
+                            href="<?= base_url('admin') ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll" href="<?= base_url("admin/message") ?>">Add Anime</a>
+                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll"
+                            href="<?= base_url("admin/addanime") ?>">Add Anime</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll" href="<?= base_url("admin/message") ?>">Delete Anime</a>
+                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll"
+                            href="<?= base_url("admin/deleteanime") ?>">Delete Anime</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll" href="<?= base_url("admin/message") ?>">Message</a>
+                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll"
+                            href="<?= base_url("admin/message") ?>">Message</a>
                     </li>
 
                     <li class="nav-item">
