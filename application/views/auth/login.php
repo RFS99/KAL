@@ -37,7 +37,7 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card shadow-2-strong card-login">
                         <div class="card-body p-5">
-                            <h3 class="mb-5 text-center text-title">Sign in</h3>
+                            <h3 class="mb-5 text-center text-title">Log in</h3>
                             <form id="form-login" action="<?= base_url('login/do-login') ?>" method="post">
                                 <div class="form-outline mb-4">
                                     <input type="email" placeholder="Email" name="email"
@@ -49,8 +49,7 @@
                                 </div>
                                 <button class="btn btn-lg btn-block btn-login" type="submit">Masuk</button>
                                 <div class="col-12 text-center mt-5">
-                                    <span>Belum punya akun? <a href="<?= base_url("register") ?>"
-                                            class="text-register">Registrasi</a></span>
+
                                 </div>
                             </form>
 

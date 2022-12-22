@@ -18,23 +18,19 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="#about">List Genre</a>
-                    </li>
-
-                    <li class="nav-item">
                         <a class="nav-link smoth-scroll" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
                         <?php if ($is_session) : ?>
                         <?php if ($user_type == 0) : ?>
                         <!-- User -->
-                        <a class="nav-link smoth-scroll" href="<?= base_url('user') ?>">Account</a>
+                        <a class="nav-link smoth-scroll" href="<?= base_url('user') ?>">Login Admin</a>
                         <?php else : ?>
                         <!-- Admin -->
-                        <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Account</a>
+                        <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Login Admin</a>
                         <?php endif; ?>
                         <?php else : ?>
-                        <a class="nav-link smoth-scroll" href="<?= base_url('login') ?>">Login</a>
+                        <a class="nav-link smoth-scroll" href="<?= base_url('login') ?>">Login Admin</a>
                         <?php endif; ?>
                     </li>
                 </ul>
@@ -44,7 +40,7 @@
     <!--MAIN HEADER AREA END -->
 
     <!--MAIN BANNER AREA -->
-    <div class="banner-area ">
+    <div class="banner-area bg">
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
@@ -58,25 +54,22 @@
                                             <div class="carousel-item active">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
-                                                    <p class="banner_text">There are many variations of passages of
-                                                        Lorem Ipsum available, but the majority have sufferedThere are
-                                                        ma available, but the majority have suffered</p>
+                                                    <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
+                                                        form pencarian</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
-                                                    <p class="banner_text">There are many variations of passages of
-                                                        Lorem Ipsum available, but the majority have sufferedThere are
-                                                        ma available, but the majority have suffered</p>
+                                                    <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
+                                                        form pencarian</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
                                                     <h1 class="banner-title">KAL</h1>
-                                                    <p class="banner_text">There are many variations of passages of
-                                                        Lorem Ipsum available, but the majority have sufferedThere are
-                                                        ma available, but the majority have suffered</p>
+                                                    <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
+                                                        form pencarian</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -85,7 +78,7 @@
                                 </div>
                                 <!-- banner section end -->
 
-                                <a href="<?= base_url('user') ?>" class="btn btn-white btn-circled">LETS START</a>
+                                <a href="<?= base_url('user') ?>" class="btn btn-white btn-circled wadaw">LETS START</a>
 
                             </div>
                         </div>
@@ -105,11 +98,11 @@
             <!-- search section start -->
             <div class="containerSearch">
                 <div class="card container">
-                    <div class="card-body">
+                    <div class="card-body ">
 
-                        <form style="margin-bottom: 10px;">
+                        <form style="margin-bottom: 10px; ">
                             <input type="text" placeholder="Search anime . . . ">
-                            <button type="submit">Search</button>
+                            <button type="submit" class="wadaw">Search</button>
                         </form>
 
                         <table class="table borderless">
@@ -168,7 +161,7 @@
                                     <td class="text-left"><a type="submit" href="">AIC</a></td>
                                     <td class="text-left"><a type="submit" href="">A-1 Pictures</a></td>
                                     <td class="text-left"><a type="submit" href="">Actas</a></td>
-                                    <td class="text-left"><a type="submit" href="">Asahi P</a></td>
+                                    <td class="text-left"><a type="submit" href="">Asahi Prod</a></td>
                                     <td class="text-left"><a type="submit" href="">Bones</a></td>
                                 </tr>
 
@@ -187,7 +180,7 @@
 
                                 <tr>
                                     <th scope="row"> </th>
-                                    <td class="text-left"><a type="submit" href="">David P</a></td>
+                                    <td class="text-left"><a type="submit" href="">David Prod</a></td>
                                     <td class="text-left"><a type="submit" href="">EMT Square</a></td>
                                     <td class="text-left"><a type="submit" href="">feel</a></td>
                                     <td class="text-left"><a type="submit" href="">Fanworks</a></td>
@@ -217,3 +210,19 @@
 
             <!-- search section end -->
         </section>
+
+        <section id="about" class="bg-light">
+            <section id="service">
+
+                <!-- search section start -->
+                <div class="containerSearch">
+                    <div class="card container">
+                        <div class="card-body ">
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- search section end -->
+            </section>
