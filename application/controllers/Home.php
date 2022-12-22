@@ -171,6 +171,10 @@ class Home extends CI_Controller
 			$descDom = $detailDom->find('p.preline')[0];
 			$description = @$descDom->text;
 
+			/* Release Date */
+			$releaseDom = $domClass->find('div.info span.item')[0];
+			$release = @$releaseDom->text;
+
 			/* Genre */
 			$genreArr = [];
 			$studioArr = [];
@@ -228,6 +232,7 @@ class Home extends CI_Controller
 			$anime = [
 				"title" => $title,
 				"description" => $description,
+				"release_date" => $release,
 				"studio" => $studioArr,
 				"genre" => $genreArr
 			];
@@ -235,8 +240,55 @@ class Home extends CI_Controller
 		}
 
 		/* Masukkan ke Dalam Database */
-		foreach($data as $anime){
+		for($i = 0; $i < count($data); $i++){
+			$data_anime = [
+				"title" => @$data[$i]["title"],
+				"description" => @$data[$i]["description"],
+				"realesed_date" => @$data[$i]["release_date"],
+				"created_at" => date("Y-m-d H:i:s")
+			];
+
+			$id = $this->mod->insertid("animes", $data_anime);
+
+			$genre = @$data[$i]["genre"] ?? [];
+			$studio = @$data[$i]["studio"] ?? [];
+
+			/* Insert Genre */
+			for($g = 0; $g < count($genre); $g++){
+				$genre_id = $this->mod->check_genre_id($genre[$g]);
+				$detail_genre["anime_id"] = $id;
+				if($genre_id){
+					$detail_genre["genre_id"] = @$genre_id[0]->id;
+				}else{
+					$insert_genre = [
+						"title" => $genre[$g],
+						"created_at" => date("Y-m-d H:i:s")
+					];
+					$genre_id = $this->mod->insertid("genres", $insert_genre);
+					$detail_genre["genre_id"] = $genre_id;
+				}
+				$this->mod->insert("anime_genre_details", $detail_genre);
+			}
+
+			/* Insert Studio */
+			for($s = 0; $s < count($studio); $s++){
+				$studio_id = $this->mod->check_studio_id($studio[$s]);
+				$detail_studio["anime_id"] = $id;
+				if($studio_id){
+					$detail_studio["studio_id"] = @$studio_id[0]->id;
+				}else{
+					$insert_studio = [
+						"title" => $studio[$s],
+						"created_at" => date("Y-m-d H:i:s")
+					];
+					$studio_id = $this->mod->insertid("studios", $insert_studio);
+					$detail_studio["studio_id"] = $studio_id;
+				}
+				$this->mod->insert("anime_studio_details", $detail_studio);
+			}
 
 		}
+		// echo count($data);
+		// echo "<pre>", print_r($data);
 	}
 }
