@@ -32,6 +32,41 @@ class AdminController extends CI_Controller
 		$this->load->view("admin/main-content", $data);
     }
 
+	function addanime()
+	{
+		if ( !$this->hasLogin() )redirect("login");
+		$user_type = @$this->hasLogin()->user_type;
+		if($user_type != 1){ /* jika yang login bukan admin*/
+			redirect("/");
+		}
+
+        /** JS **/
+        $data['js'] = [
+            base_url("assets/js/admin/list-user")
+        ];
+
+		$data['title'] = "Add Anime";
+		$data['page'] = "admin/addanime";
+		$this->load->view("admin/main-content", $data);
+	}
+
+	function deleteanime()
+	{
+		if ( !$this->hasLogin() )redirect("login");
+		$user_type = @$this->hasLogin()->user_type;
+		if($user_type != 1){ /* jika yang login bukan admin*/
+			redirect("/");
+		}
+
+        /** JS **/
+        $data['js'] = [
+            base_url("assets/js/admin/list-user")
+        ];
+		$data['title'] = "Delete Anime";
+		$data['page'] = "admin/addanime";
+		$this->load->view("admin/main-content", $data);
+	}
+
 	function index_user()
     {
 		if ( !$this->hasLogin() )redirect("login");

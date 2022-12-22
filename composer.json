@@ -13,7 +13,6 @@
 	"require": {
 		"php": ">=5.3.7",
 		"wamania/php-stemmer": "^3.0",
-		"sunra/php-simple-html-dom-parser": "1.5.2",
 		"1foru/php-html-parser": "^1.0"
 	},
 	"suggest": {

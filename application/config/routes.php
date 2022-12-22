@@ -72,6 +72,9 @@ $route['admin/user/reset-password'] = 'AdminController/reset_password';
 $route['admin/user/activation']     = 'AdminController/activation_account';
 $route['admin/message']             = 'AdminController/index_message';
 $route['admin/message/detail']         = 'AdminController/index_detail_message';
+$route['admin/addanime']            = 'AdminController/addanime';
+$route['admin/deleteanime']         = 'AdminController/deleteanime';
+
 
 /******* User *******/
 $route['user']                 = 'UserController/index';
