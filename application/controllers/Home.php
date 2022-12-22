@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Home extends CI_Controller
 {
 	function __construct()
@@ -104,7 +103,7 @@ class Home extends CI_Controller
 		$text_diff = array_values(array_diff($text_arr, $stopwords));
 		$genre_diff = array_values(array_diff($genre_arr, $stopwords));
 
-		/* 3. hapus duplikat text */
+		/* 3. hapus duplikat text dan menggabungkan genre dengan inputan text */
 		$text_diff = array_unique(array_merge($text_diff, $genre_diff));
 
 		/*** Stemming ***/
@@ -118,8 +117,6 @@ class Home extends CI_Controller
 				array_push($text_arr, $text);
 			}
 		}
-
-
 		return false;
 		$data_anime = [];
 		$anime_combine = [];
@@ -145,5 +142,10 @@ class Home extends CI_Controller
 		$count_same_array = count(array_intersect($target, $data));
 
 		return $count_same_array / (sqrt($count_target * $count_data));
+	}
+
+	public function scraping(){
+		$dom = new PHPHtmlParser\Dom;
+		$html = new Sunra\PhpSimple\HtmlDomParser;
 	}
 }

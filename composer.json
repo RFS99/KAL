@@ -12,7 +12,9 @@
 	},
 	"require": {
 		"php": ">=5.3.7",
-		"wamania/php-stemmer": "^3.0"
+		"wamania/php-stemmer": "^3.0",
+		"paquettg/php-html-parser": "^3.1",
+		"sunra/php-simple-html-dom-parser": "1.5.2"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
@@ -32,5 +34,8 @@
 	"require-dev": {
 		"mikey179/vfsstream": "1.6.*",
 		"phpunit/phpunit": "4.* || 5.* || 9.*"
+	},
+	"config": {
+		"vendor-dir": "vendor"
 	}
 }
