@@ -4,31 +4,11 @@
 class DashModel extends CI_Model
 {
 
-    #Ranking TOPSIS
-    public function getTopsisRank()
-    {
-        $this->db->order_by("nilai_topsis", "desc");
-
-        return $this->db->get('topsis_rank')->result_array();
-    }
 
     #Toko Ikan
-    public function getToko()
+    public function getAnime()
     {
 
-        return $this->db->get('toko_ikan')->result_array();
-    }
-
-
-    public function getDefault()
-    {
-
-        return $this->db->get('default_ikan')->result_array();
-    }
-
-    public function getInputCS()
-    {
-
-        return $this->db->get('input_ikan_cs')->result_array();
+        return $this->db->get('anime')->result_array();
     }
 }
