@@ -134,7 +134,7 @@
                 <div class="card container">
                     <div class="card-body ">
 
-                        <form style="margin-bottom: 10px; ">
+                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post">
                             <input type="text" placeholder="Search anime . . . ">
                             <button type="submit" class="wadaw">Search</button>
                         </form>
