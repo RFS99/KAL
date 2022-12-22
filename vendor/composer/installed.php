@@ -3,7 +3,7 @@
         'name' => 'codeigniter/framework',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '2704a6e8ed92f82fc566787d2b6cc012d0305b9a',
+        'reference' => 'da9c5a0feb305ef0e50118f9111828b99648da26',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'codeigniter/framework' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '2704a6e8ed92f82fc566787d2b6cc012d0305b9a',
+            'reference' => 'da9c5a0feb305ef0e50118f9111828b99648da26',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -396,15 +396,6 @@
             'install_path' => __DIR__ . '/../sebastian/version',
             'aliases' => array(),
             'dev_requirement' => true,
-        ),
-        'sunra/php-simple-html-dom-parser' => array(
-            'pretty_version' => 'v1.5.2',
-            'version' => '1.5.2.0',
-            'reference' => '75b9b1cb64502d8f8c04dc11b5906b969af247c6',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../sunra/php-simple-html-dom-parser',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(
             'pretty_version' => 'v3.2.0',

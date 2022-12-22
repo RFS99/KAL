@@ -35,6 +35,10 @@
 		"phpunit/phpunit": "4.* || 5.* || 9.*"
 	},
 	"config": {
-		"vendor-dir": "vendor"
+		"vendor-dir": "vendor",
+		"platform-check": false
 	}
+	
+
+
 }

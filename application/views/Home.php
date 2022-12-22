@@ -273,16 +273,16 @@
                                     <?php
                                     $no = 1;
 
-                                    if (isset($toko_ikan)) {
-                                        foreach ($anime as $data) :
+                                    if (isset($animes)) {
+                                        foreach ($animes as $data) :
                                     ?>
 
                                     <tr>
                                         <td><?= $no++; ?></td>
-                                        <td><?= $data['Nama_Toko']; ?></td>
-                                        <td><?= $data['Alamat_Toko']; ?></td>
-                                        <td><?= $data['no_telp']; ?></td>
-                                        <td><?= $data['no_telp']; ?></td>
+                                        <td><?= $data['title']; ?></td>
+                                        <td><?= $data['description']; ?></td>
+                                        <td><?= $data['genres']; ?></td>
+                                        <td><?= $data['studios']; ?></td>
 
 
 
