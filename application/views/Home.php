@@ -87,21 +87,25 @@
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="container">
-                                                    <h1 class="banner-title">KAL</h1>
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
+                                                        style="width: 400px; height:350;">
+
                                                     <p class="banner_text">Kamu bisa mencari anime dengan mengetik judul
                                                         di dalam kotak pencarian</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <h1 class="banner-title">KAL</h1>
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
+                                                        style="width: 400px; height:350;">
                                                     <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
                                                         button genre</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <h1 class="banner-title">KAL</h1>
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
+                                                        style="width: 400px; height:350;">
                                                     <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
                                                         button studio</p>
                                                 </div>
@@ -114,6 +118,7 @@
                                 <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled wadaw">LETS
                                     START</a>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -126,7 +131,7 @@
     <br>
     <br>
 
-    <section id="about" class="bg-light hmm">
+    <section id=" about" class="bg-light hmm">
         <section id="service">
 
             <!-- search section start -->
@@ -137,7 +142,7 @@
                         <hr>
                         <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post">
                             <input type="text" placeholder="Search anime . . . ">
-                            <button type="submit" class="wadaw">Search</button>
+                            <button type="submit" class="wadaw btnWadaw">Search</button>
                         </form>
                         <hr>
                         <table class="table borderless">
@@ -145,27 +150,33 @@
                                 <tr>
                                     <th scope="row">Genre</th>
                                     <td class="text-left"><a type="submit" href="">Action</a></td>
-                                    <td class="text-left"><a type="submit" href="">Adventure</a></td>
+                                    <td class="text-left"><a type="submit" href="">Adventure</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Comedy</a></td>
-                                    <td class="text-left"><a type="submit" href="">Detective</a></td>
+                                    <td class="text-left"><a type="submit" href="">Detective</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Drama</a></td>
                                     <td class="text-left"><a type="submit" href="">Fantasy</a></td>
                                     <td class="text-left"><a type="submit" href="">Harem</a></td>
                                     <td class="text-left"><a type="submit" href="">Horror</a></td>
-                                    <td class="text-left"><a type="submit" href="">Historical</a></td>
+                                    <td class="text-left"><a type="submit" href="">Historical</a>
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <th scope="row"> </th>
                                     <td class="text-left"><a type="submit" href="">Isekai</a></td>
-                                    <td class="text-left"><a type="submit" href="">Mahou Shoujo</a></td>
-                                    <td class="text-left"><a type="submit" href="">Martial Arts</a></td>
+                                    <td class="text-left"><a type="submit" href="">Mahou Shoujo</a>
+                                    </td>
+                                    <td class="text-left"><a type="submit" href="">Martial Arts</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Mecha</a></td>
                                     <td class="text-left"><a type="submit" href="">Military</a></td>
                                     <td class="text-left"><a type="submit" href="">Mystery</a></td>
                                     <td class="text-left"><a type="submit" href="">Music</a></td>
                                     <td class="text-left"><a type="submit" href="">Parody</a></td>
-                                    <td class="text-left"><a type="submit" href="">Psychological</a></td>
+                                    <td class="text-left"><a type="submit" href="">Psychological</a>
+                                    </td>
                                 </tr>
 
                                 <tr>
@@ -173,10 +184,13 @@
                                     <td class="text-left"><a type="submit" href="">Romance</a></td>
                                     <td class="text-left"><a type="submit" href="">School</a></td>
                                     <td class="text-left"><a type="submit" href="">Sci</a></td>
-                                    <td class="text-left"><a type="submit" href="">Slice of Life</a></td>
+                                    <td class="text-left"><a type="submit" href="">Slice of Life</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Sports</a></td>
-                                    <td class="text-left"><a type="submit" href="">Supernatural</a></td>
-                                    <td class="text-left"><a type="submit" href="">Super Power</a></td>
+                                    <td class="text-left"><a type="submit" href="">Supernatural</a>
+                                    </td>
+                                    <td class="text-left"><a type="submit" href="">Super Power</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Vampire</a></td>
                                 </tr>
                             </tbody>
@@ -194,32 +208,41 @@
                                     <td class="text-left"><a type="submit" href="">10 Gauge</a></td>
                                     <td class="text-left"><a type="submit" href="">1IN</a></td>
                                     <td class="text-left"><a type="submit" href="">AIC</a></td>
-                                    <td class="text-left"><a type="submit" href="">A-1 Pictures</a></td>
+                                    <td class="text-left"><a type="submit" href="">A-1 Pictures</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Actas</a></td>
-                                    <td class="text-left"><a type="submit" href="">Asahi Prod</a></td>
+                                    <td class="text-left"><a type="submit" href="">Asahi Prod</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Bones</a></td>
                                 </tr>
 
                                 <tr>
                                     <th scope="row"> </th>
                                     <td class="text-left"><a type="submit" href="">BS11</a></td>
-                                    <td class="text-left"><a type="submit" href="">Brain's Base</a></td>
+                                    <td class="text-left"><a type="submit" href="">Brain's Base</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">BS Fuji </a></td>
-                                    <td class="text-left"><a type="submit" href="">Bandai NP</a></td>
+                                    <td class="text-left"><a type="submit" href="">Bandai NP</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Bridge</a></td>
-                                    <td class="text-left"><a type="submit" href="">CloverWorks</a></td>
+                                    <td class="text-left"><a type="submit" href="">CloverWorks</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">DLE</a></td>
-                                    <td class="text-left"><a type="submit" href="">Doga Kobo</a></td>
+                                    <td class="text-left"><a type="submit" href="">Doga Kobo</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Diomedéa</a></td>
                                 </tr>
 
                                 <tr>
                                     <th scope="row"> </th>
-                                    <td class="text-left"><a type="submit" href="">David Prod</a></td>
-                                    <td class="text-left"><a type="submit" href="">EMT Square</a></td>
+                                    <td class="text-left"><a type="submit" href="">David Prod</a>
+                                    </td>
+                                    <td class="text-left"><a type="submit" href="">EMT Square</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">feel</a></td>
                                     <td class="text-left"><a type="submit" href="">Fanworks</a></td>
-                                    <td class="text-left"><a type="submit" href="">J.C.Staff</a></td>
+                                    <td class="text-left"><a type="submit" href="">J.C.Staff</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">KyoAni</a></td>
                                     <td class="text-left"><a type="submit" href="">Madhouse</a></td>
                                     <td class="text-left"><a type="submit" href="">MAPPA</a></td>
@@ -229,12 +252,16 @@
                                 <tr>
                                     <th scope="row"> </th>
                                     <td class="text-left"><a type="submit" href="">Pierrot</a></td>
-                                    <td class="text-left"><a type="submit" href="">Studio Deen</a></td>
-                                    <td class="text-left"><a type="submit" href="">Studio Gibli</a></td>
+                                    <td class="text-left"><a type="submit" href="">Studio Deen</a>
+                                    </td>
+                                    <td class="text-left"><a type="submit" href="">Studio Gibli</a>
+                                    </td>
                                     <td class="text-left"><a type="submit" href="">Shaft</a></td>
-                                    <td class="text-left"><a type="submit" href="">Toei Animation</a></td>
+                                    <td class="text-left"><a type="submit" href="">Toei
+                                            Animation</a></td>
                                     <td class="text-left"><a type="submit" href="">Ufotable</a></td>
-                                    <td class="text-left"><a type="submit" href="">Wit Studio</a></td>
+                                    <td class="text-left"><a type="submit" href="">Wit Studio</a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -243,11 +270,13 @@
                 </div>
             </div>
 
+
+
             <!-- search section end -->
         </section>
         <br>
         <br>
-        <section id="service" class="bg-light">
+        <section id=" service" class="bg-light">
             <section id="service">
 
                 <!-- search section start -->
@@ -273,16 +302,16 @@
                                     <?php
                                     $no = 1;
 
-                                    if (isset($animes)) {
-                                        foreach ($animes as $data) :
+                                    if (isset($animerec)) {
+                                        foreach ($animerec as $data) :
                                     ?>
 
                                     <tr>
                                         <td><?= $no++; ?></td>
                                         <td><?= $data['title']; ?></td>
                                         <td><?= $data['description']; ?></td>
-                                        <td><?= $data['genres']; ?></td>
-                                        <td><?= $data['studios']; ?></td>
+                                        <td><?= $data['title']; ?></td>
+                                        <td><?= $data['title']; ?></td>
 
 
 
@@ -392,7 +421,8 @@
             <script src="<?= base_url('assets/plugins/counterup/jquery.easing.1.3.js') ?>"></script>
             <!-- Counterup -->
             <script src="<?= base_url('assets/plugins/counterup/jquery.waypoints.js') ?>"></script>
-            <script src="<?= base_url('assets/plugins/counterup/jquery.counterup.min.js') ?>"></script>
+            <script src="<?= base_url('assets/plugins/counterup/jquery.counterup.min.js') ?>">
+            </script>
 
             <!-- Contact Form -->
             <script src="<?= base_url('assets/js/custom.js') ?>"></script>
@@ -403,6 +433,20 @@
 
             <!-- home js -->
             <script src="<?= base_url('assets/js/home.js') ?>"></script>
+</body>
+
+</html>
+</script>
+
+<!-- Contact Form -->
+<script src="<?= base_url('assets/js/custom.js') ?>"></script>
+
+<!-- Alertify JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
+
+<!-- home js -->
+<script src="<?= base_url('assets/js/home.js') ?>"></script>
 </body>
 
 </html>

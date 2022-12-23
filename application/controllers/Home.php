@@ -9,6 +9,7 @@ class Home extends CI_Controller
 		$this->result['message'] 	= "";
 		$this->result['data']	 	= [];
 		$this->load->model("HomeModel", "mod");
+		$this->load->helper('url');
 	}
 
 	function hasLogin()
@@ -27,6 +28,14 @@ class Home extends CI_Controller
 
 		$data['is_session']	= $is_session;
 		$data['user_type']	= $user_type;
+		$data['animerec'] = $this->mod->data_anime();
+		$this->load->view('Home', $data);
+	}
+
+	public function animerec()
+	{
+		$data['animes'] = $this->mod->data_anime()->result();
+
 		$this->load->view('Home', $data);
 	}
 
