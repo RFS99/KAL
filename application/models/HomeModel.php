@@ -73,10 +73,27 @@ class HomeModel extends CI_Model
 		$id = $this->db->insert_id();
 		return $id;
 	}
-
-	function get_stopword()
-	{
-		$this->db->select("word");
-		$this->db->$this->db->from("stopwords");
+  
+	function anime_list(){
+		$this->db->select("*");
+		$this->db->from("animes");
+		$q = $this->db->get();
+		return ($q->num_rows() == 0 ? FALSE : $q->result());
+	}
+  
+	function genre_list(){
+		$this->db->select("*");
+		$this->db->from("genres");
+		$q = $this->db->get();
+		return ($q->num_rows() == 0 ? FALSE : $q->result());
+	}
+  
+	function studio_list(){
+		$this->db->select("*");
+		$this->db->from("studios");
+		$q = $this->db->get();
+		return ($q->num_rows() == 0 ? FALSE : $q->result());
 	}
 }
+
+
