@@ -64,6 +64,61 @@ body .bg {
 	background-color: #fe6cfa !important;
 }
 
+.widiw {
+	color: black;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.widiw span {
+	margin-right: -20px;
+	display: inline-block;
+	background: #fff;
+	color: #212529;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 3px;
+	padding-right: 3px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+	transition: 0.5s;
+	user-select: none;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.widiw input[type="checkbox"] {
+	display: none;
+}
+.widiw:hover label input[type="checkbox"] {
+	background-color: #ccc;
+}
+
+.widiw input[type="checkbox"]:checked ~ .checkmark {
+	background: #fe6cfa;
+	color: #fff;
+}
+
+.widiw input[type="checkbox"]:checked ~ .checkmark::after {
+	display: block;
+}
+
+.checkmark {
+	background-color: #fe6cfa;
+}
+
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+body table {
+	font-family: "poppins", sans-serif;
+}
 .btnWadaw {
 	background: #4e2cff !important;
 }

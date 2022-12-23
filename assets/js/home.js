@@ -75,3 +75,9 @@ $(function () {
 		);
 	});
 });
+
+$('.CheckMemberClassList').bind('click',function(){
+    $('.CheckMemberClassList').removeClass('MemberClassActive').addClass('MemberClassInactive');
+    $(this).removeClass('MemberClassInactive').addClass('MemberClassActive');
+    $(this).find('input:radio').prop('checked', true);
+});
