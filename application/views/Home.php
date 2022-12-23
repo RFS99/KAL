@@ -33,7 +33,9 @@
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
-	<div id="loader"><div class="loading-app"></div></div>
+    <div id="loader">
+        <div class="loading-app"></div>
+    </div>
     <nav class="navbar navbar-expand-lg fixed-top trans-navigation bl">
         <div class="container">
             <img src="assets/images/Logo2.png" alt="" class=" PISH">
@@ -148,23 +150,28 @@
 
                         <table class="table borderless">
                             <tbody>
-                              
-								<?php if(isset($genre_list) && $genre_list):
-									$a = 0;
-									foreach($genre_list as $row): $a++ ?>
-									<tr>
-										<th scope="row"><?=($a == 1) ? "Genres" : ""?></th>
-										<?php foreach($row as $genre): ?>
-											<td class="text-left"><?=@$genre->title?></td>
-										<?php endforeach; ?>
-									</tr>
-								<?php
-									endforeach;
-								else: ?>
-								<tr>
-									<td colspan="100%">Tidak ada data.</td>
-								</tr>
-								<?php endif; ?>
+
+                                <?php if (isset($genre_list) && $genre_list) :
+                                    $a = 0;
+                                    foreach ($genre_list as $row) : $a++ ?>
+                                <tr>
+                                    <th scope="row"><?= ($a == 1) ? "Genres" : "" ?></th>
+                                    <?php foreach ($row as $genre) : ?>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark"><?= @$genre->title ?></span>
+                                        </label>
+                                    </td>
+                                    <?php endforeach; ?>
+                                </tr>
+                                <?php
+                                    endforeach;
+                                else : ?>
+                                <tr>
+                                    <td colspan="100%">Tidak ada data.</td>
+                                </tr>
+                                <?php endif; ?>
 
                             </tbody>
                         </table>
@@ -173,23 +180,27 @@
 
                         <table class="table borderless">
                             <tbody>
-							<tbody>
-								<?php if(isset($studio_list) && $studio_list):
-									$a = 0;
-									foreach($studio_list as $row): $a++ ?>
-									<tr>
-										<th scope="row"><?=($a == 1) ? "Studios" : ""?></th>
-										<?php foreach($row as $studio): ?>
-											<td class="text-left"><?=@$studio->title?></td>
-										<?php endforeach; ?>
-									</tr>
-								<?php
-									endforeach;
-								else: ?>
-								<tr>
-									<td colspan="100%">Tidak ada data.</td>
-								</tr>
-								<?php endif; ?>
+                            <tbody>
+                                <?php if (isset($studio_list) && $studio_list) :
+                                    $a = 0;
+                                    foreach ($studio_list as $row) : $a++ ?>
+                                <tr>
+                                    <th scope="row"><?= ($a == 1) ? "Studios" : "" ?></th>
+                                    <?php foreach ($row as $studio) : ?>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark"><?= @$studio->title ?></span>
+                                        </label>
+                                        <?php endforeach; ?>
+                                </tr>
+                                <?php
+                                    endforeach;
+                                else : ?>
+                                <tr>
+                                    <td colspan="100%">Tidak ada data.</td>
+                                </tr>
+                                <?php endif; ?>
                             </tbody>
 
                             </tbody>
@@ -360,7 +371,9 @@
             <script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
 
             <!-- home js -->
-			<script>var base = "<?=base_url()?>";</script>
+            <script>
+            var base = "<?= base_url() ?>";
+            </script>
             <script src="<?= base_url('assets/js/home.js') ?>"></script>
 </body>
 
