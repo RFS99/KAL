@@ -9,6 +9,6 @@ class DashModel extends CI_Model
     public function getAnime()
     {
 
-        return $this->db->get('anime')->result_array();
+        return $this->db->get('animes')->result_array();
     }
 }

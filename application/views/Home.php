@@ -87,21 +87,25 @@
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="container">
-                                                    <h1 class="banner-title">KAL</h1>
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
+                                                        style="width: 400px; height:350;">
+
                                                     <p class="banner_text">Kamu bisa mencari anime dengan mengetik judul
                                                         di dalam kotak pencarian</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <h1 class="banner-title">KAL</h1>
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
+                                                        style="width: 400px; height:350;">
                                                     <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
                                                         button genre</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <h1 class="banner-title">KAL</h1>
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
+                                                        style="width: 400px; height:350;">
                                                     <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
                                                         button studio</p>
                                                 </div>
@@ -114,6 +118,7 @@
                                 <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled wadaw">LETS
                                     START</a>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -126,7 +131,7 @@
     <br>
     <br>
 
-    <section id="about" class="bg-light hmm">
+    <section id=" about" class="bg-light hmm">
         <section id="service">
 
             <!-- search section start -->
@@ -137,11 +142,13 @@
                         <hr>
                         <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post">
                             <input type="text" placeholder="Search anime . . . ">
-                            <button type="submit" class="wadaw">Search</button>
+                            <button type="submit" class="wadaw btnWadaw">Search</button>
                         </form>
                         <hr>
+
                         <table class="table borderless">
                             <tbody>
+                              
 								<?php if(isset($genre_list) && $genre_list):
 									$a = 0;
 									foreach($genre_list as $row): $a++ ?>
@@ -158,9 +165,9 @@
 									<td colspan="100%">Tidak ada data.</td>
 								</tr>
 								<?php endif; ?>
+
                             </tbody>
                         </table>
-
                         <hr>
                         <!-- STUDIO -->
 
@@ -184,18 +191,20 @@
 								</tr>
 								<?php endif; ?>
                             </tbody>
+
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
+
+
 
             <!-- search section end -->
         </section>
         <br>
         <br>
-        <section id="service" class="bg-light">
+        <section id=" service" class="bg-light">
             <section id="service">
 
                 <!-- search section start -->
@@ -221,16 +230,16 @@
                                     <?php
                                     $no = 1;
 
-                                    if (isset($toko_ikan)) {
-                                        foreach ($anime as $data) :
+                                    if (isset($animerec)) {
+                                        foreach ($animerec as $data) :
                                     ?>
 
                                     <tr>
                                         <td><?= $no++; ?></td>
-                                        <td><?= $data['Nama_Toko']; ?></td>
-                                        <td><?= $data['Alamat_Toko']; ?></td>
-                                        <td><?= $data['no_telp']; ?></td>
-                                        <td><?= $data['no_telp']; ?></td>
+                                        <td><?= $data['title']; ?></td>
+                                        <td><?= $data['description']; ?></td>
+                                        <td><?= $data['title']; ?></td>
+                                        <td><?= $data['title']; ?></td>
 
 
 
@@ -340,7 +349,8 @@
             <script src="<?= base_url('assets/plugins/counterup/jquery.easing.1.3.js') ?>"></script>
             <!-- Counterup -->
             <script src="<?= base_url('assets/plugins/counterup/jquery.waypoints.js') ?>"></script>
-            <script src="<?= base_url('assets/plugins/counterup/jquery.counterup.min.js') ?>"></script>
+            <script src="<?= base_url('assets/plugins/counterup/jquery.counterup.min.js') ?>">
+            </script>
 
             <!-- Contact Form -->
             <script src="<?= base_url('assets/js/custom.js') ?>"></script>
@@ -352,6 +362,21 @@
             <!-- home js -->
 			<script>var base = "<?=base_url()?>";</script>
             <script src="<?= base_url('assets/js/home.js') ?>"></script>
+</body>
+
+</html>
+
+</script>
+
+<!-- Contact Form -->
+<script src="<?= base_url('assets/js/custom.js') ?>"></script>
+
+<!-- Alertify JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
+
+<!-- home js -->
+<script src="<?= base_url('assets/js/home.js') ?>"></script>
 </body>
 
 </html>

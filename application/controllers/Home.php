@@ -9,6 +9,7 @@ class Home extends CI_Controller
 		$this->result['message'] 	= "";
 		$this->result['data']	 	= [];
 		$this->load->model("HomeModel", "mod");
+		$this->load->helper('url');
 	}
 
 	function hasLogin()
@@ -32,6 +33,14 @@ class Home extends CI_Controller
 		$data['studio_list'] = (!$studio) ? [] : array_chunk($studio, 9);
 		$data['is_session']	= $is_session;
 		$data['user_type']	= $user_type;
+		$data['animerec'] = $this->mod->data_anime();
+		$this->load->view('Home', $data);
+	}
+
+	public function animerec()
+	{
+		$data['animes'] = $this->mod->data_anime()->result();
+
 		$this->load->view('Home', $data);
 	}
 
@@ -158,23 +167,24 @@ class Home extends CI_Controller
 			echo json_encode($this->result);
 			exit;
 		}
+
 		$domClass = new PHPHtmlParser\Dom;
-		$domClass->loadFromFile(FCPATH. 'assets/Summer 2022 - Anime - MyAnimeList.net.html');
+		$domClass->loadFromFile(FCPATH . 'assets/Summer 2022 - Anime - MyAnimeList.net.html');
 
 		$contents = $domClass->find('body');
-		
+
 		$data = [];
 		/* Scraping Data dan masukkan ke dalam array */
-		foreach($contents->find('div.js-anime-category-producer') as $val){
+		foreach ($contents->find('div.js-anime-category-producer') as $val) {
 			$domClass->loadStr($val);
 			/* Judul */
 			$en = $domClass->find('div.title-text h3.h3_anime_subtitle')[0];
 			$jp = $domClass->find('div.title-text h2.h2_anime_title a')[0];
 
 			$title = "";
-			if(!empty($en)){
+			if (!empty($en)) {
 				$title = @$en->text;
-			}else{
+			} else {
 				$title = @$jp->text;
 			}
 
@@ -191,9 +201,9 @@ class Home extends CI_Controller
 			$genreArr = [];
 			$studioArr = [];
 			$genreDom = $domClass->find('div.genres.js-genre');
-			foreach($genreDom->find('.genres-inner.js-genre-inner span.genre') as $gnr){
+			foreach ($genreDom->find('.genres-inner.js-genre-inner span.genre') as $gnr) {
 				$domClass->loadStr($gnr);
-				if(!empty($gnr)){
+				if (!empty($gnr)) {
 					$g = $domClass->find('a');
 					$genreText = $g->text;
 					array_push($genreArr, $genreText);
@@ -201,35 +211,35 @@ class Home extends CI_Controller
 			}
 			/* Theme */
 			$propDom = $detailDom->find('.properties');
-			foreach($propDom->find('div.property') as $detail){
+			foreach ($propDom->find('div.property') as $detail) {
 				$domClass->loadStr($detail);
 				$captioDom = $domClass->find('div.property span.caption');
 				$captionText = @$captioDom->text;
 
-				if(!empty($captionText)){
+				if (!empty($captionText)) {
 					/* Studio */
-					if(strtolower($captionText) == 'studio' || strtolower($captionText) == 'studios'){
-						foreach($domClass->find('div.property span.item') as $std){
+					if (strtolower($captionText) == 'studio' || strtolower($captionText) == 'studios') {
+						foreach ($domClass->find('div.property span.item') as $std) {
 							$domClass->loadStr($std);
 							$studioEmpty = @$std->text;
-							
+
 							$studio = "";
-							if(empty($studioEmpty) ){
+							if (empty($studioEmpty)) {
 								$studioDom = $domClass->find('a');
 								$studioText = @$studioDom->text;
 								$studio = $studioText;
-							}else{
+							} else {
 								$studio = $studioEmpty;
 							}
 							array_push($studioArr, $studio);
 						}
-					}else if(strtolower($captionText) == 'theme' || strtolower($captionText) == 'themes'){
-						foreach($domClass->find('div.property span.item') as $thm){
+					} else if (strtolower($captionText) == 'theme' || strtolower($captionText) == 'themes') {
+						foreach ($domClass->find('div.property span.item') as $thm) {
 							$domClass->loadStr($thm);
 							$themeEmpty = @$thm->text;
-							
+
 							$theme = "";
-							if(empty($themeEmpty) ){
+							if (empty($themeEmpty)) {
 								$themeDom = $domClass->find('a');
 								$themeText = @$themeDom->text;
 								$theme = $themeText;
@@ -252,7 +262,7 @@ class Home extends CI_Controller
 		}
 
 		/* Masukkan ke Dalam Database */
-		for($i = 0; $i < count($data); $i++){
+		for ($i = 0; $i < count($data); $i++) {
 			$data_anime = [
 				"title" => @$data[$i]["title"],
 				"description" => @$data[$i]["description"],
@@ -266,12 +276,12 @@ class Home extends CI_Controller
 			$studio = @$data[$i]["studio"] ?? [];
 
 			/* Insert Genre */
-			for($g = 0; $g < count($genre); $g++){
+			for ($g = 0; $g < count($genre); $g++) {
 				$genre_id = $this->mod->check_genre_id($genre[$g]);
 				$detail_genre["anime_id"] = $id;
-				if($genre_id){
+				if ($genre_id) {
 					$detail_genre["genre_id"] = @$genre_id[0]->id;
-				}else{
+				} else {
 					$insert_genre = [
 						"title" => $genre[$g],
 						"created_at" => date("Y-m-d H:i:s")
@@ -283,12 +293,12 @@ class Home extends CI_Controller
 			}
 
 			/* Insert Studio */
-			for($s = 0; $s < count($studio); $s++){
+			for ($s = 0; $s < count($studio); $s++) {
 				$studio_id = $this->mod->check_studio_id($studio[$s]);
 				$detail_studio["anime_id"] = $id;
-				if($studio_id){
+				if ($studio_id) {
 					$detail_studio["studio_id"] = @$studio_id[0]->id;
-				}else{
+				} else {
 					$insert_studio = [
 						"title" => $studio[$s],
 						"created_at" => date("Y-m-d H:i:s")
@@ -298,7 +308,6 @@ class Home extends CI_Controller
 				}
 				$this->mod->insert("anime_studio_details", $detail_studio);
 			}
-
 		}
 
 		$this->result['status']  = "done";

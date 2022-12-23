@@ -75,6 +75,7 @@ $(function () {
 		);
 	});
 });
+
 $(document).ready(function(){
     $.ajax({
 		url: base + "web-scraping",
@@ -92,4 +93,5 @@ $(document).ready(function(){
 			$("#loader").css("display","none");
 		},
     });
+
 });
