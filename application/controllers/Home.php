@@ -47,6 +47,8 @@ class Home extends CI_Controller
 	}
 
 
+
+
 	function contact_save()
 	{
 		$name   	= $this->input->post("name") ?? '';
