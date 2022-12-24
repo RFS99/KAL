@@ -47,6 +47,14 @@ class Home extends CI_Controller
 		$this->load->view('Home', $data);
 	}
 
+	public function genrec()
+	{
+		$data['genres'] = $this->mod->data_animegenre()->result();
+
+		$this->load->view('Home', $data);
+	}
+
+
 
 	function contact_save()
 	{
