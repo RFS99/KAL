@@ -34,8 +34,6 @@ class Home extends CI_Controller
 		$data['is_session']	= $is_session;
 		$data['user_type']	= $user_type;
 		$data['animerec'] = $this->mod->data_anime();
-
-
 		$this->load->view('Home', $data);
 	}
 
@@ -45,8 +43,6 @@ class Home extends CI_Controller
 
 		$this->load->view('Home', $data);
 	}
-
-
 
 
 	function contact_save()
