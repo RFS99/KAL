@@ -84,4 +84,9 @@ class HomeModel extends CI_Model
 		$q = $this->db->get();
 		return ($q->num_rows() == 0 ? FALSE : $q->result());
 	}
+	function get_stopword()
+	{
+		$this->db->select("word");
+		$this->db->$this->db->from("stopwords");
+	}
 }
