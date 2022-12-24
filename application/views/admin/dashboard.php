@@ -14,22 +14,26 @@
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="container">
-                                                    <h1 class="banner-title">KAL</h1>
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
+                                                        style="width: 400px; height:350;">
+
                                                     <p class="banner_text">Kamu bisa mencari anime dengan mengetik judul
                                                         di dalam kotak pencarian</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <h1 class="banner-title">KAL</h1>
-                                                    <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
+                                                        style="width: 400px; height:350;">
+                                                    <p class="banner_text">Kamu bisa mencari anime menggunakan
                                                         button genre</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <h1 class="banner-title">KAL</h1>
-                                                    <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
+                                                        style="width: 400px; height:350;">
+                                                    <p class="banner_text">Kamu bisa mencari anime menggunakan
                                                         button studio</p>
                                                 </div>
                                             </div>
@@ -41,6 +45,7 @@
                                 <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled wadaw">LETS
                                     START</a>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -62,15 +67,16 @@
                     <div class="card-body ">
 
                         <hr>
-                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post">
-                            <input type="text" placeholder="Search anime . . . ">
+                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post" required
+                            maxlength="50">
+                            <input type="search" name="keyword" placeholder="Search anime . . . ">
                             <button type="submit" class="wadaw btnWadaw">Search</button>
                         </form>
                         <hr>
 
                         <table class="table borderless">
                             <tbody>
-                                <form>
+                                <form action="<?= base_url("genre") ?>" method="post">
 
                                     <tr class="text-left">
                                         <th scope="row">Genre</th>
@@ -525,20 +531,16 @@
 
                                     <?php
                                     $no = 1;
-
                                     if (isset($animerec)) {
                                         foreach ($animerec as $data) :
                                     ?>
 
                                     <tr>
                                         <td><?= $no++; ?></td>
-                                        <td><?= $data['title']; ?></td>
+                                        <td><?= $data['anime_title']; ?></td>
                                         <td><?= $data['description']; ?></td>
+                                        <td><?= $data['nama_genre']; ?></td>
                                         <td><?= $data['title']; ?></td>
-                                        <td><?= $data['title']; ?></td>
-
-
-
                                     </tr>
                                     <?php
                                         endforeach;
@@ -547,6 +549,7 @@
 
                                     }
                                     ?>
+
                                 </tbody>
 
                             </table>
@@ -556,63 +559,4 @@
 
                 <!-- search section end -->
             </section>
-
-
-            <br>
-            <br>
-            <section id="service" class="bg-light">
-                <section id="service">
-
-                    <!-- search section start -->
-                    <div class="card container">
-                        <div class="card-body ">
-                            <div class="container">
-                                <br>
-                                <br>
-                                <h3>Anime</h3><br>
-
-                                <table border="1" class="table table-striped text-dark">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Judul Anime</th>
-                                            <th>Sinopsis</th>
-                                            <th>Genre</th>
-                                            <th>Studio</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <?php
-                                        $no = 1;
-
-                                        if (isset($toko_ikan)) {
-                                            foreach ($anime as $data) :
-                                        ?>
-
-                                        <tr>
-                                            <td><?= $no++; ?></td>
-                                            <td><?= $data['Nama_Toko']; ?></td>
-                                            <td><?= $data['Alamat_Toko']; ?></td>
-                                            <td><?= $data['no_telp']; ?></td>
-                                            <td><?= $data['no_telp']; ?></td>
-
-
-
-                                        </tr>
-                                        <?php
-                                            endforeach;
-                                            ?>
-                                        <?php
-
-                                        }
-                                        ?>
-                                    </tbody>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- search section end -->
-                </section>
+</body>

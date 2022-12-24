@@ -59,11 +59,11 @@ header('Access-Control-Allow-Origin: *');
                             href="<?= base_url('admin') ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll"
+                        <a class="nav-link <?= @$title == "Add Anime" ? "active" : null ?> smoth-scroll"
                             href="<?= base_url("admin/addanime") ?>">Add Anime</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= @$title == "Message" ? "active" : null ?> smoth-scroll"
+                        <a class="nav-link <?= @$title == "Delet Anime" ? "active" : null ?> smoth-scroll"
                             href="<?= base_url("admin/deleteanime") ?>">Delete Anime</a>
                     </li>
 

@@ -142,8 +142,7 @@
                     <div class="card-body ">
 
                         <hr>
-                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post" required
-                            maxlength="50">
+                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="get">
                             <input type="search" name="keyword" placeholder="Search anime . . . ">
                             <button type="submit" class="wadaw btnWadaw">Search</button>
                         </form>
@@ -590,6 +589,9 @@
                         <div class="container">
                             <br>
                             <br>
+                            <?php if (!empty($keyword)) { ?>
+                            <p style="color:orange"><b>Menampilkan data dengan kata kunci : "<?= $keyword; ?>"</b></p>
+                            <?php } ?>
                             <h3>Anime</h3><br>
 
                             <table border="1" class="table table-striped text-dark">

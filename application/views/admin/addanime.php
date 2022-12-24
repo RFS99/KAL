@@ -27,7 +27,7 @@
                                     <input type="text" placeholder="Studio" name="fullname"
                                         class="form-control form-control-lg" />
                                 </div>
-                                <button id="btn-submit" class="btn btn-lg btn-block btn-login"
+                                <button id="btn-submit" class="btn btn-lg btn-block btn-login wadaw btnWadaw"
                                     type="submit">Submit</button>
 
                             </form>
@@ -46,13 +46,6 @@
     <!-- Alertify JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
-</body>
-
-</html> integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- Alertify JavaScript -->
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-<script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
 </body>
 
 </html>
