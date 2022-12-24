@@ -329,6 +329,28 @@
                                     </tr>
                                 </form>
 
+                                <?php if (isset($genre_list) && $genre_list) :
+                                    $a = 0;
+                                    foreach ($genre_list as $row) : $a++ ?>
+                                <tr>
+                                    <th scope="row"><?= ($a == 1) ? "Genres" : "" ?></th>
+                                    <?php foreach ($row as $genre) : ?>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark"><?= @$genre->title ?></span>
+                                        </label>
+                                    </td>
+                                    <?php endforeach; ?>
+                                </tr>
+                                <?php
+                                    endforeach;
+                                else : ?>
+                                <tr>
+                                    <td colspan="100%">Tidak ada data.</td>
+                                </tr>
+                                <?php endif; ?>
+
                             </tbody>
                         </table>
                         <hr>
