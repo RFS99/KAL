@@ -25,7 +25,7 @@ class Home extends CI_Controller
 			$is_session = true;
 			$user_type = @$this->hasLogin()->user_type;
 		}
-		
+
 		$genre = $this->mod->genre_list();
 		$studio = $this->mod->studio_list();
 
@@ -34,6 +34,8 @@ class Home extends CI_Controller
 		$data['is_session']	= $is_session;
 		$data['user_type']	= $user_type;
 		$data['animerec'] = $this->mod->data_anime();
+
+
 		$this->load->view('Home', $data);
 	}
 
@@ -43,6 +45,8 @@ class Home extends CI_Controller
 
 		$this->load->view('Home', $data);
 	}
+
+
 
 
 	function contact_save()
@@ -158,10 +162,11 @@ class Home extends CI_Controller
 		return $count_same_array / (sqrt($count_target * $count_data));
 	}
 
-	public function scraping(){
+	public function scraping()
+	{
 		/* Jika List Anime Sudah Ada */
 		$list = $this->mod->anime_list();
-		if($list){
+		if ($list) {
 			$this->result['status']  = "done";
 			$this->result['message'] = "Berhasil memuat data.";
 			echo json_encode($this->result);
