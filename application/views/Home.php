@@ -142,7 +142,7 @@
                     <div class="card-body ">
 
                         <hr>
-                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="get" required
+                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post" required
                             maxlength="50">
                             <input type="search" name="keyword" placeholder="Search anime . . . ">
                             <button type="submit" class="wadaw btnWadaw">Search</button>
@@ -606,7 +606,6 @@
 
                                     <?php
                                     $no = 1;
-
                                     if (isset($animerec)) {
                                         foreach ($animerec as $data) :
                                     ?>
@@ -617,9 +616,6 @@
                                         <td><?= $data['description']; ?></td>
                                         <td><?= $data['nama_genre']; ?></td>
                                         <td><?= $data['title']; ?></td>
-
-
-
                                     </tr>
                                     <?php
                                         endforeach;
@@ -628,6 +624,7 @@
 
                                     }
                                     ?>
+
                                 </tbody>
 
                             </table>
@@ -741,21 +738,6 @@
             var base = "<?= base_url() ?>";
             </script>
             <script src="<?= base_url('assets/js/home.js') ?>"></script>
-</body>
-
-</html>
-
-</script>
-
-<!-- Contact Form -->
-<script src="<?= base_url('assets/js/custom.js') ?>"></script>
-
-<!-- Alertify JavaScript -->
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-<script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
-
-<!-- home js -->
-<script src="<?= base_url('assets/js/home.js') ?>"></script>
 </body>
 
 </html>

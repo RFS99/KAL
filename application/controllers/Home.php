@@ -34,6 +34,8 @@ class Home extends CI_Controller
 		$data['is_session']	= $is_session;
 		$data['user_type']	= $user_type;
 		$data['animerec'] = $this->mod->data_anime();
+		$data['search'] = $this->input->get('keyword');
+
 		$this->load->view('Home', $data);
 	}
 

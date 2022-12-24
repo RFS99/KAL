@@ -2,27 +2,6 @@
 
 class HomeModel extends CI_Model
 {
-
-	public function data_animegenre()
-	{
-		$this->db->select('*');
-		$this->db->from('anime_genre_details');
-		$this->db->join('animes', ' animes.id = anime_genre_details.anime_id');
-		$this->db->join('genres', ' genres.id = anime_genre_details.genre_id');
-		$query = $this->db->get();
-		return $query;
-	}
-
-	public function data_animestudio()
-	{
-		$this->db->select('*');
-		$this->db->from('anime_studio_details');
-		$this->db->join('animes', ' animes.id = anime_genre_details.anime_id');
-		$this->db->join('studios', ' studios.id = anime_studio_details.studio_id');
-		$query = $this->db->get();
-		return $query;
-	}
-
 	public function data_anime()
 	{
 		$this->db->select('*');
