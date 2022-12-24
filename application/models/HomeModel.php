@@ -25,7 +25,29 @@ class HomeModel extends CI_Model
 
 	public function data_anime()
 	{
-		return $this->db->get('animes')->result_array();
+		$this->db->select('*');
+		$this->db->from('animes');
+		$this->db->join(
+			'anime_studio_details',
+			' anime_studio_details.anime_id = animes.id',
+		);
+		$this->db->join(
+			'anime_genre_details',
+			' anime_genre_details.anime_id = animes.id',
+			'LEFT'
+		);
+		$this->db->join(
+			'genres',
+			'genres.id = anime_genre_details.genre_id',
+			'LEFT'
+		);
+		$this->db->join(
+			'studios',
+			' studios.id = anime_studio_details.studio_id',
+			'LEFT'
+		);
+		$data_animes = $this->db->get();
+		return $data_animes->result_array();
 	}
 
 	public function data_genre()
@@ -73,27 +95,28 @@ class HomeModel extends CI_Model
 		$id = $this->db->insert_id();
 		return $id;
 	}
-  
-	function anime_list(){
+
+	function anime_list()
+	{
 		$this->db->select("*");
 		$this->db->from("animes");
 		$q = $this->db->get();
 		return ($q->num_rows() == 0 ? FALSE : $q->result());
 	}
-  
-	function genre_list(){
+
+	function genre_list()
+	{
 		$this->db->select("*");
 		$this->db->from("genres");
 		$q = $this->db->get();
 		return ($q->num_rows() == 0 ? FALSE : $q->result());
 	}
-  
-	function studio_list(){
+
+	function studio_list()
+	{
 		$this->db->select("*");
 		$this->db->from("studios");
 		$q = $this->db->get();
 		return ($q->num_rows() == 0 ? FALSE : $q->result());
 	}
 }
-
-

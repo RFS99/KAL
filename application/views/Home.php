@@ -100,7 +100,7 @@
                                                 <div class="container">
                                                     <img src="assets/images/Logo-Type-KAL.png" alt=""
                                                         style="width: 400px; height:350;">
-                                                    <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
+                                                    <p class="banner_text">Kamu bisa mencari anime menggunakan
                                                         button genre</p>
                                                 </div>
                                             </div>
@@ -108,7 +108,7 @@
                                                 <div class="container">
                                                     <img src="assets/images/Logo-Type-KAL.png" alt=""
                                                         style="width: 400px; height:350;">
-                                                    <p class="banner_text">Kamu bisa melakukan pencarian menggunakan
+                                                    <p class="banner_text">Kamu bisa mencari anime menggunakan
                                                         button studio</p>
                                                 </div>
                                             </div>
@@ -142,15 +142,16 @@
                     <div class="card-body ">
 
                         <hr>
-                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post">
-                            <input type="text" placeholder="Search anime . . . ">
+                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="get" required
+                            maxlength="50">
+                            <input type="search" name="keyword" placeholder="Search anime . . . ">
                             <button type="submit" class="wadaw btnWadaw">Search</button>
                         </form>
                         <hr>
 
                         <table class="table borderless">
                             <tbody>
-                                <form>
+                                <form action="<?= base_url("genre") ?>" method="post">
 
                                     <tr class="text-left">
                                         <th scope="row">Genre</th>
@@ -612,9 +613,9 @@
 
                                     <tr>
                                         <td><?= $no++; ?></td>
-                                        <td><?= $data['title']; ?></td>
+                                        <td><?= $data['anime_title']; ?></td>
                                         <td><?= $data['description']; ?></td>
-                                        <td><?= $data['title']; ?></td>
+                                        <td><?= $data['nama_genre']; ?></td>
                                         <td><?= $data['title']; ?></td>
 
 

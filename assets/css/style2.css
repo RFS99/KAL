@@ -58,6 +58,7 @@ body .bg {
 	background-repeat: no-repeat;
 	background-blend-mode: normal;
 	background-size: cover;
+	padding-bottom: -300px !important;
 }
 
 .wadaw:hover {
@@ -80,8 +81,8 @@ body .bg {
 	color: #212529;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	padding-left: 3px;
-	padding-right: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 	transition: 0.5s;
@@ -121,6 +122,7 @@ body table {
 }
 .btnWadaw {
 	background: #4e2cff !important;
+	color: #fff;
 }
 
 .banner-content .banner-title {
@@ -147,4 +149,9 @@ body table {
 
 .bl:hover {
 	background-color: black;
+}
+
+.card-body {
+	padding-left: 50px !important;
+	padding-right: 100px !important;
 }
