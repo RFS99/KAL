@@ -33,15 +33,8 @@ class Home extends CI_Controller
 		$data['studio_list'] = (!$studio) ? [] : array_chunk($studio, 7);
 		$data['is_session']	= $is_session;
 		$data['user_type']	= $user_type;
-<<<<<<< HEAD
-		$data['animerec'] = $this->mod->data_anime();
-
-=======
->>>>>>> d6a8f9332bac91b53d770e5d126ed70cab7a715a
-
 		$this->load->view('Home', $data);
 	}
-
 
 	public function animerec()
 	{
@@ -110,8 +103,8 @@ class Home extends CI_Controller
 		$studio = $this->input->post("studios") ?? [];
 
 		/*** Membuat genre dan studio menjadi string ***/
-		$genre_string = implode(" ",$genre);
-		$studio_string = implode(" ",$studio);
+		$genre_string = implode(" ", $genre);
+		$studio_string = implode(" ", $studio);
 
 		/*** Proses case folding (merubah kata-kata menjadi lowercase) ***/
 		$text_tolowercase = strtolower($search);
@@ -153,7 +146,7 @@ class Home extends CI_Controller
 			}
 		}
 
-		
+
 		$data_anime = $this->do_anime_in_database($search, $genre, $studio);
 		foreach ($data_anime as $anime) {
 			$score[$anime['anime_id']] = $this->calculate_cosine($text_arr, $anime['text']);
@@ -161,14 +154,14 @@ class Home extends CI_Controller
 
 		/* Sorting Descending */
 		arsort($score);
-		
+
 		/* Get detail anime */
 		$recommendation = [];
 		$index = 0;
-		foreach($score as $key => $val){
+		foreach ($score as $key => $val) {
 			$index++;
 			/* Maximal mengambil 10 data saja */
-			if($index <= 10){
+			if ($index <= 10) {
 				$detail_anime = $this->mod->data_anime($key);
 				$detail = [
 					"anime" => $detail_anime,
@@ -198,19 +191,20 @@ class Home extends CI_Controller
 		$this->load->view('Home', $data);
 	}
 
-	public function do_anime_in_database($search, $genre, $studio){
+	public function do_anime_in_database($search, $genre, $studio)
+	{
 		$data = [];
 		$search = "night";
 		$genre = $genre;
 		$studio = $studio;
-		$animes = $this->mod->anime_list($search,$genre,$studio);
-		
-		foreach($animes as $anime){
+		$animes = $this->mod->anime_list($search, $genre, $studio);
+
+		foreach ($animes as $anime) {
 			$data_anime = [];
 
 			/*** Ubah tanda koma di genre dan studio menjadi spasi ***/
-			$genre_str = str_replace(',',' ',@$anime->genre_title);
-			$studio_str = str_replace(',',' ',@$anime->studio_title);
+			$genre_str = str_replace(',', ' ', @$anime->genre_title);
+			$studio_str = str_replace(',', ' ', @$anime->studio_title);
 
 			/*** Proses case folding (merubah kata-kata menjadi lowercase) ***/
 			$title_lower = strtolower(@$anime->title);
@@ -220,20 +214,20 @@ class Home extends CI_Controller
 
 			/*** Menggabungkan semua string ***/
 			$text = $title_lower . " " . $desc_lower . " " . $genre_lower . " " . $studio_lower;
-	
+
 			/*** tokenizing (pemotongan string) ***/
 			/* 1. hapus special character */
 			$clean_text = $this->clean($text);
 			/* 2. memotong text menjadi array */
 			$text_arr = explode(" ", $clean_text);
-			
+
 			/*** filtering (stopword removal) ***/
 			/* 1. mengambil text stopword */
 			$stopwords = array_column($this->mod->get_stopword(), 'word');
-			
+
 			/* 2. menghapus stopword text pada string */
 			$text_diff = array_diff($text_arr, $stopwords);
-			
+
 			/* 3. hapus duplikat array dan mereset index array menjadi ke 0 */
 			$array_unique = array_values(array_unique($text_diff));
 
@@ -248,7 +242,7 @@ class Home extends CI_Controller
 					array_push($text_arr, $text);
 				}
 			}
-			
+
 			$data_anime = [
 				"anime_id" => $anime->anime_id,
 				"text" => $text_arr
@@ -269,7 +263,7 @@ class Home extends CI_Controller
 	{
 		$count_target = count($target);
 		$count_data = count($data);
-		
+
 		$count_same_array = count(array_intersect($target, $data));
 
 		return $count_same_array / (sqrt($count_target * $count_data));
