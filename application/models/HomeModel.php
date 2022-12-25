@@ -2,9 +2,9 @@
 
 class HomeModel extends CI_Model
 {
-	public function data_anime($keyword = null)
+	public function data_anime()
 	{
-		$this->db->select('*');
+		$this->db->select($select = '*');
 		$this->db->from('animes');
 		$this->db->join(
 			'anime_studio_details',
@@ -25,18 +25,9 @@ class HomeModel extends CI_Model
 			' studios.id = anime_studio_details.studio_id',
 			'LEFT'
 		);
-		if (!empty($keyword)) {
-			$this->db->like('anime_title', $keyword);
-			$this->db->like('nama_genre', $keyword);
-		}
 		$data_animes = $this->db->get();
 		return $data_animes->result_array();
 	}
-
-	public function get_stopword()
-	{
-	}
-
 
 	function check_genre_id($genre)
 	{

@@ -133,7 +133,7 @@
     <br>
     <br>
 
-    <section id=" about" class="bg-light hmm">
+    <section id="about" class="bg-light hmm">
         <section id="service">
 
             <!-- search section start -->
@@ -328,187 +328,64 @@
                                     </tr>
                                 </form>
 
-                                    </tr>
+                                </tr>
 
-                                    <tr>
-                                        <th scope="row"> </th>
-
-                                        <td>
-
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Isekai</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Mahou Shoujo</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Martial Arts</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Mecha</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Military</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Mystery</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Music</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Parody</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Psychological</span>
-                                            </label>
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row"> </th>
-
-                                        <td>
-
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Romance</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">School</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Sci-Fi</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Slice of Life</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Sports</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Supernatural</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Super Power</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Vampire</span>
-                                            </label>
-                                        </td>
-
-                                    </tr>
-                                </form>
-
-                            </tbody>
-                        </table>
-                        <hr>
-                        <!-- STUDIO -->
-
-                        <table class="table borderless">
-                            <tbody>
                                 <tr>
-                                    <th scope="row">Studio</th>
+                                    <th scope="row"> </th>
+
                                     <td>
 
                                         <label class="widiw">
                                             <input type="checkbox" href="">
-                                            <span class="checkmark">8bit</span>
+                                            <span class="checkmark">Isekai</span>
                                         </label>
                                     </td>
                                     <td>
                                         <label class="widiw">
                                             <input type="checkbox" href="">
-                                            <span class="checkmark">8PAN</span>
+                                            <span class="checkmark">Mahou Shoujo</span>
                                         </label>
                                     </td>
                                     <td>
                                         <label class="widiw">
                                             <input type="checkbox" href="">
-                                            <span class="checkmark">10 Gauge</span>
+                                            <span class="checkmark">Martial Arts</span>
                                         </label>
                                     </td>
                                     <td>
                                         <label class="widiw">
                                             <input type="checkbox" href="">
-                                            <span class="checkmark">1IN</span>
+                                            <span class="checkmark">Mecha</span>
                                         </label>
                                     </td>
                                     <td>
                                         <label class="widiw">
                                             <input type="checkbox" href="">
-                                            <span class="checkmark">AIC</span>
+                                            <span class="checkmark">Military</span>
                                         </label>
                                     </td>
                                     <td>
                                         <label class="widiw">
                                             <input type="checkbox" href="">
-                                            <span class="checkmark">A-1 Pictures</span>
+                                            <span class="checkmark">Mystery</span>
                                         </label>
                                     </td>
                                     <td>
                                         <label class="widiw">
                                             <input type="checkbox" href="">
-                                            <span class="checkmark">Actas</span>
+                                            <span class="checkmark">Music</span>
                                         </label>
                                     </td>
                                     <td>
                                         <label class="widiw">
                                             <input type="checkbox" href="">
-                                            <span class="checkmark">Asahi Prod</span>
+                                            <span class="checkmark">Parody</span>
                                         </label>
                                     </td>
                                     <td>
                                         <label class="widiw">
                                             <input type="checkbox" href="">
-                                            <span class="checkmark">Bones</span>
+                                            <span class="checkmark">Psychological</span>
                                         </label>
                                     </td>
 
@@ -518,6 +395,62 @@
                                     <th scope="row"> </th>
 
                                     <td>
+
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark">Romance</span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark">School</span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark">Sci-Fi</span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark">Slice of Life</span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark">Sports</span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark">Supernatural</span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark">Super Power</span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="widiw">
+                                            <input type="checkbox" href="">
+                                            <span class="checkmark">Vampire</span>
+                                        </label>
+                                    </td>
+
+                                </tr>
+                                </form>
+
+                            </tbody>
+                        </table>
+                        <hr>
+                        <!-- STUDIO -->
 
                         <table class="table borderless">
                             <tbody>
@@ -760,13 +693,11 @@
                     </div>
                 </div>
             </div>
-
-
-
             <!-- search section end -->
         </section>
         <br>
         <br>
+
         <section id=" service" class="bg-light">
             <section id="service">
 
