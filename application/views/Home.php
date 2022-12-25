@@ -117,7 +117,7 @@
 
                                 </div>
                                 <!-- banner section end -->
-                                <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled wadaw">LETS
+                                <a href="#about" class="btn btn-white btn-circled wadaw">LETS
                                     START</a>
                             </div>
 
@@ -125,806 +125,232 @@
                     </div>
                 </div>
             </div>
-        </div><br><br>
+        </div>
     </div>
     <!--MAIN HEADER AREA END -->
 
     <!--  GENRE AND STUDIO START  -->
-    <br>
-    <br>
-
-    <section id=" about" class="bg-light hmm">
+    <section id="about" class="bg-light hmm">
         <section id="service">
 
-            <!-- search section start -->
-            <div class="containerSearch">
-                <div class="card container">
-                    <div class="card-body ">
+		<!-- search section start -->
+		<div class="containerSearch">
+			<div class="card container">
+				<div class="card-body">
+					<hr>
+					<form class="mb-5" action="<?= base_url("search") ?>" method="post" required>
+					<div class="col-md-12 d-flex">
+						<input type="search" name="keyword" placeholder="Search anime . . ." class="w-100">
+						<button id="btn-search" type="submit" class="wadaw btnWadaw">Search</button>
+					</div>
+					<hr>
 
-                        <hr>
-                        <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="post" required
-                            maxlength="50">
-                            <input type="search" name="keyword" placeholder="Search anime . . . ">
-                            <button type="submit" class="wadaw btnWadaw">Search</button>
-                        </form>
-                        <hr>
+					<table class="table borderless col-md-12">
+						<tbody>
+							<?php if(isset($genre_list) && $genre_list):
+									$a = 0;
+									foreach($genre_list as $row): $a++ ?>
+									<tr>
+										<th scope="row"><?=($a == 1) ? "Genres" : ""?></th>
+										<?php foreach($row as $genre): ?>
+											<td class="text-left">
+												<label class="widiw">
+													<input type="checkbox" name="genres[]" value="<?=@$genre->title?>">
+													<span class="checkmark"><?=@$genre->title?></span>
+												</label>
+											</td>
+										<?php endforeach; ?>
+									</tr>
+								<?php
+									endforeach;
+								else: ?>
+								<tr>
+									<td colspan="100%">Tidak ada data.</td>
+								</tr>
+							<?php endif; ?>
+						</tbody>
+					</table>
+					<hr>
+					<table class="table borderless col-md-12">
+						<tbody>
+							<?php if(isset($studio_list) && $studio_list):
+								$a = 0;
+								foreach($studio_list as $row): $a++ ?>
+								<tr>
+									<th scope="row"><?=($a == 1) ? "Studios" : ""?></th>
+									<?php foreach($row as $studio): ?>
+										<td class="text-left">
+											<label class="widiw">
+												<input type="checkbox" name="studios[]" value="<?=@$studio->title?>">
+												<span class="checkmark"><?=@$studio->title?></span>
+											</label>
+										</td>
+									<?php endforeach; ?>
+								</tr>
+							<?php
+								endforeach;
+							else: ?>
+							<tr>
+								<td colspan="100%">Tidak ada data.</td>
+							</tr>
+							<?php endif; ?>
+						</tbody>
+					</table>
+					<hr>
+					</form>
+				</div>
+			</div>
+		</div>
 
-                        <table class="table borderless">
-                            <tbody>
-                                <form action="<?= base_url("genre") ?>" method="post">
-
-                                    <tr class="text-left">
-                                        <th scope="row">Genre</th>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Action</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Adventure</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Comedy</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Detective</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Drama</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Fantasy</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Harem</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Horror</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Historical</span>
-                                            </label>
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row"> </th>
-
-                                        <td>
-
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Isekai</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Mahou Shoujo</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Martial Arts</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Mecha</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Military</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Mystery</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Music</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Parody</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Psychological</span>
-                                            </label>
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row"> </th>
-
-                                        <td>
-
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Romance</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">School</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Sci-Fi</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Slice of Life</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Sports</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Supernatural</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Super Power</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Vampire</span>
-                                            </label>
-                                        </td>
-
-                                    </tr>
-                                </form>
-
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row"> </th>
-
-                                        <td>
-
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Isekai</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Mahou Shoujo</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Martial Arts</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Mecha</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Military</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Mystery</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Music</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Parody</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Psychological</span>
-                                            </label>
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row"> </th>
-
-                                        <td>
-
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Romance</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">School</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Sci-Fi</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Slice of Life</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Sports</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Supernatural</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Super Power</span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="widiw">
-                                                <input type="checkbox" href="">
-                                                <span class="checkmark">Vampire</span>
-                                            </label>
-                                        </td>
-
-                                    </tr>
-                                </form>
-
-                            </tbody>
-                        </table>
-                        <hr>
-                        <!-- STUDIO -->
-
-                        <table class="table borderless">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Studio</th>
-                                    <td>
-
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">8bit</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">8PAN</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">10 Gauge</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">1IN</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">AIC</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">A-1 Pictures</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Actas</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Asahi Prod</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Bones</span>
-                                        </label>
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-                                    <th scope="row"> </th>
-
-                                    <td>
-
-                        <table class="table borderless">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Studio</th>
-                                    <td>
-
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">8bit</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">8PAN</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">10 Gauge</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">1IN</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">AIC</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">A-1 Pictures</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Actas</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Asahi Prod</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Bones</span>
-                                        </label>
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-                                    <th scope="row"> </th>
-
-                                    <td>
-
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">BS11</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Brain's Base</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">BS Fuji</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Bandai</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Bridge</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">CloverWorks</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">DLE</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Doga Kobo</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Diomedéa</span>
-                                        </label>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row"> </th>
-
-
-                                    <td>
-
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">David Prod</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">EMT Square</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">feel</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Fanworks</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">J.C.Staff</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">KyoAni</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Madhouse</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">MAPPA</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">OLM</span>
-                                        </label>
-                                    </td>
-
-                                </tr>
-
-
-                                <tr>
-                                    <th scope="row"> </th>
-
-
-                                    <td>
-
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Pierrot</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Studio Deen</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Studio Gibli</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Shaft</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Toei
-                                                Animation</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Ufotable</span>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="widiw">
-                                            <input type="checkbox" href="">
-                                            <span class="checkmark">Wit Studio</span>
-                                        </label>
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- search section end -->
+		<!-- search section end -->
         </section>
-        <br>
-        <br>
-        <section id=" service" class="bg-light">
-            <section id="service">
+		<section id="anime-recommendation">
+			<!-- search section start -->
+			<div class="card container">
+				<div class="card-body ">
+					<div class="container">
+						<h3>Anime</h3>
+						<table border="1" class="table table-striped text-dark">
+							<thead class="thead-dark">
+								<tr>
+									<th>No</th>
+									<th>Judul Anime</th>
+									<th>Sinopsis</th>
+									<th>Genre</th>
+									<th>Studio</th>
+									<th>Score</th>
+								</tr>
+							</thead>
+							<tbody>
 
-                <!-- search section start -->
-                <div class="card container">
-                    <div class="card-body ">
-                        <div class="container">
-                            <br>
-                            <br>
-                            <h3>Anime</h3><br>
+								<?php
+								$no = 1;
+								if (isset($anime_rec)) {
+									foreach ($anime_rec as $data) :
+								?>
 
-                            <table border="1" class="table table-striped text-dark">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Judul Anime</th>
-                                        <th>Sinopsis</th>
-                                        <th>Genre</th>
-                                        <th>Studio</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+								<tr>
+									<td><?= $no++; ?></td>
+									<td><?= @$data['anime'][0]->anime_title ?></td>
+									<td><?= @$data['anime'][0]->description ?></td>
+									<td><?= @$data['anime'][0]->genre_title ?></td>
+									<td><?= @$data['anime'][0]->studio_title ?></td>
+									<td><?= @$data['score']; ?></td>
+								</tr>
+								<?php
+									endforeach;
+									?>
+								<?php
 
-                                    <?php
-                                    $no = 1;
-                                    if (isset($animerec)) {
-                                        foreach ($animerec as $data) :
-                                    ?>
+								}
+								?>
 
-                                    <tr>
-                                        <td><?= $no++; ?></td>
-                                        <td><?= $data['anime_title']; ?></td>
-                                        <td><?= $data['description']; ?></td>
-                                        <td><?= $data['nama_genre']; ?></td>
-                                        <td><?= $data['title']; ?></td>
-                                    </tr>
-                                    <?php
-                                        endforeach;
-                                        ?>
-                                    <?php
+							</tbody>
 
-                                    }
-                                    ?>
+						</table>
+					</div>
+				</div>
+			</div>
 
-                                </tbody>
+			<!-- search section end -->
+		</section>
+		<!--  CONTACT START  -->
+		<section id="contact" class="section-padding ">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-sm-12 col-mfd-12">
+						<div class="section-heading">
+							<h4 class="section-title">Get in touch</h4>
+							<p>Jika ada pertanyaan yang ingin ditanyakan</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 col-sm-12 m-auto">
+						<div class="contact-form ">
+							<form id="form-submit" class="contact__form" method="post"
+								action="<?= base_url('contact/save') ?>">
+								<!-- form message -->
+								<div class="row">
+									<div class="col-12">
+										<div class="alert alert-success contact__msg" style="display: none"
+											role="alert">
+											Your message was sent successfully.
+										</div>
+									</div>
+								</div>
+								<!-- end message -->
+								<div class="row">
+									<div class="col-md-6 form-group">
+										<input name="name" type="text" class="form-control" placeholder="Name"
+											required>
+									</div>
+									<div class="col-md-6 form-group">
+										<input name="email" type="email" class="form-control" placeholder="Email"
+											required>
+									</div>
+									<div class="col-md-12 form-group">
+										<input name="subject" type="text" class="form-control" placeholder="Subject"
+											required>
+									</div>
+									<div class="col-12 form-group">
+										<textarea name="message" class="form-control" rows="6" placeholder="Message"
+											required></textarea>
+									</div>
+									<div class="col-12 text-center">
+										<button id="btn-submit" type="submit"
+											class="btn btn-hero btn-circled btnWadaw wadaw">Send
+											Message</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--  CONTACT END  -->
 
-                            </table>
-                        </div>
-                    </div>
-                </div>
+		<!--  FOOTER AREA START  -->
+		<section id="footer" class="section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<div class="footer-copy">
+							© 2022 All Rights Reserved.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--  FOOTER AREA END  -->
 
-                <!-- search section end -->
-            </section>
+		<!-- Main jQuery -->
+		<script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
+			integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<!-- Bootstrap 4.3.1 -->
+		<script src="<?= base_url('assets/plugins/bootstrap/js/popper.min.js') ?>"></script>
+		<script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
+		<!-- Woow animtaion -->
+		<script src="<?= base_url('assets/plugins/counterup/wow.min.js') ?>"></script>
+		<script src="<?= base_url('assets/plugins/counterup/jquery.easing.1.3.js') ?>"></script>
+		<!-- Counterup -->
+		<script src="<?= base_url('assets/plugins/counterup/jquery.waypoints.js') ?>"></script>
+		<script src="<?= base_url('assets/plugins/counterup/jquery.counterup.min.js') ?>">
+		</script>
 
+		<!-- Contact Form -->
+		<script src="<?= base_url('assets/js/custom.js') ?>"></script>
 
+		<!-- Alertify JavaScript -->
+		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+		<script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
 
-
-
-            <!--  CONTACT START  -->
-            <section id="contact" class="section-padding ">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-mfd-12">
-                            <div class="section-heading">
-                                <h4 class="section-title">Get in touch</h4>
-                                <p>Jika ada pertanyaan yang ingin ditanyakan</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8 col-sm-12 m-auto">
-                            <div class="contact-form ">
-                                <form id="form-submit" class="contact__form" method="post"
-                                    action="<?= base_url('contact/save') ?>">
-                                    <!-- form message -->
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="alert alert-success contact__msg" style="display: none"
-                                                role="alert">
-                                                Your message was sent successfully.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end message -->
-                                    <div class="row">
-                                        <div class="col-md-6 form-group">
-                                            <input name="name" type="text" class="form-control" placeholder="Name"
-                                                required>
-                                        </div>
-                                        <div class="col-md-6 form-group">
-                                            <input name="email" type="email" class="form-control" placeholder="Email"
-                                                required>
-                                        </div>
-                                        <div class="col-md-12 form-group">
-                                            <input name="subject" type="text" class="form-control" placeholder="Subject"
-                                                required>
-                                        </div>
-                                        <div class="col-12 form-group">
-                                            <textarea name="message" class="form-control" rows="6" placeholder="Message"
-                                                required></textarea>
-                                        </div>
-                                        <div class="col-12 text-center">
-                                            <button id="btn-submit" type="submit"
-                                                class="btn btn-hero btn-circled btnWadaw wadaw">Send
-                                                Message</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--  CONTACT END  -->
-
-            <!--  FOOTER AREA START  -->
-            <section id="footer" class="section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <div class="footer-copy">
-                                © 2022 All Rights Reserved.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--  FOOTER AREA END  -->
-
-            <!-- Main jQuery -->
-            <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
-                integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww=="
-                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <!-- Bootstrap 4.3.1 -->
-            <script src="<?= base_url('assets/plugins/bootstrap/js/popper.min.js') ?>"></script>
-            <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
-            <!-- Woow animtaion -->
-            <script src="<?= base_url('assets/plugins/counterup/wow.min.js') ?>"></script>
-            <script src="<?= base_url('assets/plugins/counterup/jquery.easing.1.3.js') ?>"></script>
-            <!-- Counterup -->
-            <script src="<?= base_url('assets/plugins/counterup/jquery.waypoints.js') ?>"></script>
-            <script src="<?= base_url('assets/plugins/counterup/jquery.counterup.min.js') ?>">
-            </script>
-
-            <!-- Contact Form -->
-            <script src="<?= base_url('assets/js/custom.js') ?>"></script>
-
-            <!-- Alertify JavaScript -->
-            <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-            <script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
-
-            <!-- home js -->
-            <script>
-            var base = "<?= base_url() ?>";
-            </script>
-            <script src="<?= base_url('assets/js/home.js') ?>"></script>
+		<!-- home js -->
+		<script>var base = "<?= base_url() ?>";</script>
+		<script src="<?= base_url('assets/js/home.js') ?>"></script>
 </body>
 
 </html>

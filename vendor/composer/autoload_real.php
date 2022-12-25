@@ -57,7 +57,6 @@ class ComposerAutoloaderInitc8b735e08b5117708c6c62fe53f20164
         }
         foreach ($includeFiles as $fileIdentifier => $file) {
             composerRequirec8b735e08b5117708c6c62fe53f20164($fileIdentifier, $file);
-
         }
 
         return $loader;
@@ -72,4 +71,3 @@ function composerRequirec8b735e08b5117708c6c62fe53f20164($fileIdentifier, $file)
         $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
     }
 }
-

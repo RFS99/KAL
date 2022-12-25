@@ -85,6 +85,7 @@ $route['input_cs']             = 'UserController/inputCS';
 $route['contact/save']         = 'Home/contact_save';
 $route['web-scraping']         = 'Home/scraping';
 $route['search']               = 'Home/search';
+$route['testing']               = 'Home/do_anime_in_database';
 
 
 $route['default_controller'] = 'home';

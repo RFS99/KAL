@@ -11,8 +11,6 @@
 .containerSearch form {
 	background: #fff;
 	width: 100%;
-	height: 45px;
-	display: flex;
 }
 
 .containerSearch form input {
