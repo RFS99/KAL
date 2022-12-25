@@ -140,7 +140,7 @@
 					<hr>
 					<form class="mb-5" action="<?= base_url("search") ?>" method="post" required>
 					<div class="col-md-12 d-flex">
-						<input type="search" name="keyword" placeholder="Search anime . . ." class="w-100">
+						<input type="search" name="keyword" placeholder="Search anime . . ." class="w-100" required>
 						<button id="btn-search" type="submit" class="wadaw btnWadaw">Search</button>
 					</div>
 					<hr>
