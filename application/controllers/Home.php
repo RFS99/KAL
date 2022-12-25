@@ -33,9 +33,15 @@ class Home extends CI_Controller
 		$data['studio_list'] = (!$studio) ? [] : array_chunk($studio, 7);
 		$data['is_session']	= $is_session;
 		$data['user_type']	= $user_type;
+<<<<<<< HEAD
+		$data['animerec'] = $this->mod->data_anime();
+
+=======
+>>>>>>> d6a8f9332bac91b53d770e5d126ed70cab7a715a
 
 		$this->load->view('Home', $data);
 	}
+
 
 	public function animerec()
 	{

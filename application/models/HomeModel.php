@@ -4,6 +4,33 @@ class HomeModel extends CI_Model
 {
 	public function data_anime($anime_id)
 	{
+<<<<<<< HEAD
+		$this->db->select($select = '*');
+		$this->db->from('animes');
+		$this->db->join(
+			'anime_studio_details',
+			' anime_studio_details.anime_id = animes.id',
+		);
+		$this->db->join(
+			'anime_genre_details',
+			' anime_genre_details.anime_id = animes.id',
+			'LEFT'
+		);
+		$this->db->join(
+			'genres',
+			'genres.id = anime_genre_details.genre_id',
+			'LEFT'
+		);
+		$this->db->join(
+			'studios',
+			' studios.id = anime_studio_details.studio_id',
+			'LEFT'
+		);
+		$data_animes = $this->db->get();
+		return $data_animes->result_array();
+	}
+
+=======
 		$sql = "
 		SELECT 
 			anm.id as anime_id,
@@ -29,6 +56,7 @@ class HomeModel extends CI_Model
 		$q = $this->db->query($sql);
 		return ($q->num_rows() == 0 ? [] : $q->result());
 	}
+>>>>>>> d6a8f9332bac91b53d770e5d126ed70cab7a715a
 	function check_genre_id($genre)
 	{
 		$this->db->select("id");

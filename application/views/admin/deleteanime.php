@@ -1,10 +1,7 @@
+<!DOCTYPE html>
+<html>
+
 <body data-spy="scroll" data-target=".fixed-top">
-
-
-    <!--  GENRE AND STUDIO START  -->
-    <br>
-    <br>
-
     <section class="bg-light">
         <h3 class="mb-5 text-center text-title">Delete Anime</h3>
         <!-- search section start -->
@@ -19,11 +16,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul Anime</th>
-                                <th>Sinopsis</th>
-                                <th>Genre</th>
-                                <th>Studio</th>
                                 <th>Acton</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -31,17 +24,16 @@
                             <?php
                             $no = 1;
 
-                            if (isset($toko_ikan)) {
-                                foreach ($anime as $data) :
+                            if (isset($animerec)) {
+                                foreach ($animerec as $data) :
                             ?>
 
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $data['Nama_Toko']; ?></td>
-                                <td><?= $data['Alamat_Toko']; ?></td>
-                                <td><?= $data['no_telp']; ?></td>
-                                <td><?= $data['no_telp']; ?></td>
-
+                                <td><?= $data['anime_title']; ?>
+                                <td>
+                                    <?php echo anchor('Hapus'); ?>
+                                </td>
 
 
                             </tr>
@@ -61,3 +53,7 @@
 
         <!-- search section end -->
     </section>
+
+</body>
+
+</html>
