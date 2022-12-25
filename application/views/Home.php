@@ -117,7 +117,7 @@
 
                                 </div>
                                 <!-- banner section end -->
-                                <a href="<?= base_url('#about') ?>" class="btn btn-white btn-circled wadaw">LETS
+                                <a href="#about" class="btn btn-white btn-circled wadaw">LETS
                                     START</a>
                             </div>
 
@@ -125,22 +125,33 @@
                     </div>
                 </div>
             </div>
-        </div><br><br>
+        </div>
     </div>
     <!--MAIN HEADER AREA END -->
 
     <!--  GENRE AND STUDIO START  -->
+<<<<<<< HEAD
     <br>
     <br>
 
+=======
+>>>>>>> d6a8f9332bac91b53d770e5d126ed70cab7a715a
     <section id="about" class="bg-light hmm">
         <section id="service">
 
-            <!-- search section start -->
-            <div class="containerSearch">
-                <div class="card container">
-                    <div class="card-body ">
+		<!-- search section start -->
+		<div class="containerSearch">
+			<div class="card container">
+				<div class="card-body">
+					<hr>
+					<form class="mb-5" action="<?= base_url("search") ?>" method="post" required>
+					<div class="col-md-12 d-flex">
+						<input type="search" name="keyword" placeholder="Search anime . . ." class="w-100" required>
+						<button id="btn-search" type="submit" class="wadaw btnWadaw">Search</button>
+					</div>
+					<hr>
 
+<<<<<<< HEAD
                         <hr>
                         <form style="margin-bottom: 10px; " action="<?= base_url("search") ?>" method="get">
                             <input type="search" name="keyword" placeholder="Search anime . . . ">
@@ -711,153 +722,214 @@
                             <p style="color:orange"><b>Menampilkan data dengan kata kunci : "<?= $keyword; ?>"</b></p>
                             <?php } ?>
                             <h3>Anime</h3><br>
+=======
+					<table class="table borderless col-md-12">
+						<tbody>
+							<?php if(isset($genre_list) && $genre_list):
+									$a = 0;
+									foreach($genre_list as $row): $a++ ?>
+									<tr>
+										<th scope="row"><?=($a == 1) ? "Genres" : ""?></th>
+										<?php foreach($row as $genre): ?>
+											<td class="text-left">
+												<label class="widiw">
+													<input type="checkbox" name="genres[]" value="<?=@$genre->title?>">
+													<span class="checkmark"><?=@$genre->title?></span>
+												</label>
+											</td>
+										<?php endforeach; ?>
+									</tr>
+								<?php
+									endforeach;
+								else: ?>
+								<tr>
+									<td colspan="100%">Tidak ada data.</td>
+								</tr>
+							<?php endif; ?>
+						</tbody>
+					</table>
+					<hr>
+					<table class="table borderless col-md-12">
+						<tbody>
+							<?php if(isset($studio_list) && $studio_list):
+								$a = 0;
+								foreach($studio_list as $row): $a++ ?>
+								<tr>
+									<th scope="row"><?=($a == 1) ? "Studios" : ""?></th>
+									<?php foreach($row as $studio): ?>
+										<td class="text-left">
+											<label class="widiw">
+												<input type="checkbox" name="studios[]" value="<?=@$studio->title?>">
+												<span class="checkmark"><?=@$studio->title?></span>
+											</label>
+										</td>
+									<?php endforeach; ?>
+								</tr>
+							<?php
+								endforeach;
+							else: ?>
+							<tr>
+								<td colspan="100%">Tidak ada data.</td>
+							</tr>
+							<?php endif; ?>
+						</tbody>
+					</table>
+					<hr>
+					</form>
+				</div>
+			</div>
+		</div>
 
-                            <table border="1" class="table table-striped text-dark">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Judul Anime</th>
-                                        <th>Sinopsis</th>
-                                        <th>Genre</th>
-                                        <th>Studio</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+		<!-- search section end -->
+        </section>
+		<section id="anime-recommendation">
+			<!-- search section start -->
+			<div class="card container">
+				<div class="card-body ">
+					<div class="container">
+						<h3>Anime</h3>
+						<table border="1" class="table table-striped text-dark">
+							<thead class="thead-dark">
+								<tr>
+									<th>No</th>
+									<th>Judul Anime</th>
+									<th>Sinopsis</th>
+									<th>Genre</th>
+									<th>Studio</th>
+									<th>Score</th>
+								</tr>
+							</thead>
+							<tbody>
 
-                                    <?php
-                                    $no = 1;
-                                    if (isset($animerec)) {
-                                        foreach ($animerec as $data) :
-                                    ?>
+								<?php
+								$no = 1;
+								if (isset($anime_rec)) {
+									foreach ($anime_rec as $data) :
+								?>
+>>>>>>> d6a8f9332bac91b53d770e5d126ed70cab7a715a
 
-                                    <tr>
-                                        <td><?= $no++; ?></td>
-                                        <td><?= $data['anime_title']; ?></td>
-                                        <td><?= $data['description']; ?></td>
-                                        <td><?= $data['nama_genre']; ?></td>
-                                        <td><?= $data['title']; ?></td>
-                                    </tr>
-                                    <?php
-                                        endforeach;
-                                        ?>
-                                    <?php
+								<tr>
+									<td><?= $no++; ?></td>
+									<td><?= @$data['anime'][0]->anime_title ?></td>
+									<td><?= @$data['anime'][0]->description ?></td>
+									<td><?= @$data['anime'][0]->genre_title ?></td>
+									<td><?= @$data['anime'][0]->studio_title ?></td>
+									<td><?= @$data['score']; ?></td>
+								</tr>
+								<?php
+									endforeach;
+									?>
+								<?php
 
-                                    }
-                                    ?>
+								}
+								?>
 
-                                </tbody>
+							</tbody>
 
-                            </table>
-                        </div>
-                    </div>
-                </div>
+						</table>
+					</div>
+				</div>
+			</div>
 
-                <!-- search section end -->
-            </section>
+			<!-- search section end -->
+		</section>
+		<!--  CONTACT START  -->
+		<section id="contact" class="section-padding ">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-sm-12 col-mfd-12">
+						<div class="section-heading">
+							<h4 class="section-title">Get in touch</h4>
+							<p>Jika ada pertanyaan yang ingin ditanyakan</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 col-sm-12 m-auto">
+						<div class="contact-form ">
+							<form id="form-submit" class="contact__form" method="post"
+								action="<?= base_url('contact/save') ?>">
+								<!-- form message -->
+								<div class="row">
+									<div class="col-12">
+										<div class="alert alert-success contact__msg" style="display: none"
+											role="alert">
+											Your message was sent successfully.
+										</div>
+									</div>
+								</div>
+								<!-- end message -->
+								<div class="row">
+									<div class="col-md-6 form-group">
+										<input name="name" type="text" class="form-control" placeholder="Name"
+											required>
+									</div>
+									<div class="col-md-6 form-group">
+										<input name="email" type="email" class="form-control" placeholder="Email"
+											required>
+									</div>
+									<div class="col-md-12 form-group">
+										<input name="subject" type="text" class="form-control" placeholder="Subject"
+											required>
+									</div>
+									<div class="col-12 form-group">
+										<textarea name="message" class="form-control" rows="6" placeholder="Message"
+											required></textarea>
+									</div>
+									<div class="col-12 text-center">
+										<button id="btn-submit" type="submit"
+											class="btn btn-hero btn-circled btnWadaw wadaw">Send
+											Message</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--  CONTACT END  -->
 
+		<!--  FOOTER AREA START  -->
+		<section id="footer" class="section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<div class="footer-copy">
+							© 2022 All Rights Reserved.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--  FOOTER AREA END  -->
 
+		<!-- Main jQuery -->
+		<script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
+			integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<!-- Bootstrap 4.3.1 -->
+		<script src="<?= base_url('assets/plugins/bootstrap/js/popper.min.js') ?>"></script>
+		<script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
+		<!-- Woow animtaion -->
+		<script src="<?= base_url('assets/plugins/counterup/wow.min.js') ?>"></script>
+		<script src="<?= base_url('assets/plugins/counterup/jquery.easing.1.3.js') ?>"></script>
+		<!-- Counterup -->
+		<script src="<?= base_url('assets/plugins/counterup/jquery.waypoints.js') ?>"></script>
+		<script src="<?= base_url('assets/plugins/counterup/jquery.counterup.min.js') ?>">
+		</script>
 
+		<!-- Contact Form -->
+		<script src="<?= base_url('assets/js/custom.js') ?>"></script>
 
+		<!-- Alertify JavaScript -->
+		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+		<script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
 
-            <!--  CONTACT START  -->
-            <section id="contact" class="section-padding ">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-mfd-12">
-                            <div class="section-heading">
-                                <h4 class="section-title">Get in touch</h4>
-                                <p>Jika ada pertanyaan yang ingin ditanyakan</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8 col-sm-12 m-auto">
-                            <div class="contact-form ">
-                                <form id="form-submit" class="contact__form" method="post"
-                                    action="<?= base_url('contact/save') ?>">
-                                    <!-- form message -->
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="alert alert-success contact__msg" style="display: none"
-                                                role="alert">
-                                                Your message was sent successfully.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end message -->
-                                    <div class="row">
-                                        <div class="col-md-6 form-group">
-                                            <input name="name" type="text" class="form-control" placeholder="Name"
-                                                required>
-                                        </div>
-                                        <div class="col-md-6 form-group">
-                                            <input name="email" type="email" class="form-control" placeholder="Email"
-                                                required>
-                                        </div>
-                                        <div class="col-md-12 form-group">
-                                            <input name="subject" type="text" class="form-control" placeholder="Subject"
-                                                required>
-                                        </div>
-                                        <div class="col-12 form-group">
-                                            <textarea name="message" class="form-control" rows="6" placeholder="Message"
-                                                required></textarea>
-                                        </div>
-                                        <div class="col-12 text-center">
-                                            <button id="btn-submit" type="submit"
-                                                class="btn btn-hero btn-circled btnWadaw wadaw">Send
-                                                Message</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--  CONTACT END  -->
-
-            <!--  FOOTER AREA START  -->
-            <section id="footer" class="section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <div class="footer-copy">
-                                © 2022 All Rights Reserved.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--  FOOTER AREA END  -->
-
-            <!-- Main jQuery -->
-            <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
-                integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww=="
-                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <!-- Bootstrap 4.3.1 -->
-            <script src="<?= base_url('assets/plugins/bootstrap/js/popper.min.js') ?>"></script>
-            <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
-            <!-- Woow animtaion -->
-            <script src="<?= base_url('assets/plugins/counterup/wow.min.js') ?>"></script>
-            <script src="<?= base_url('assets/plugins/counterup/jquery.easing.1.3.js') ?>"></script>
-            <!-- Counterup -->
-            <script src="<?= base_url('assets/plugins/counterup/jquery.waypoints.js') ?>"></script>
-            <script src="<?= base_url('assets/plugins/counterup/jquery.counterup.min.js') ?>">
-            </script>
-
-            <!-- Contact Form -->
-            <script src="<?= base_url('assets/js/custom.js') ?>"></script>
-
-            <!-- Alertify JavaScript -->
-            <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-            <script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
-
-            <!-- home js -->
-            <script>
-            var base = "<?= base_url() ?>";
-            </script>
-            <script src="<?= base_url('assets/js/home.js') ?>"></script>
+		<!-- home js -->
+		<script>var base = "<?= base_url() ?>";</script>
+		<script src="<?= base_url('assets/js/home.js') ?>"></script>
 </body>
 
 </html>
