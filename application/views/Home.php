@@ -181,7 +181,7 @@
                                     <?php foreach ($row as $studio) : ?>
                                     <td class="text-left">
                                         <label class="widiw">
-                                            <input type="checkbox" name="studios[]" value="<?= @$studio->title ?>">
+                                            <input type="checkbox" name="studios" value="<?= @$studio->title ?>">
                                             <span class="checkmark"><?= @$studio->title ?></span>
                                         </label>
                                     </td>

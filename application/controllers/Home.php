@@ -194,7 +194,6 @@ class Home extends CI_Controller
 	public function do_anime_in_database($search, $genre, $studio)
 	{
 		$data = [];
-		$search = "night";
 		$genre = $genre;
 		$studio = $studio;
 		$animes = $this->mod->anime_list($search, $genre, $studio);

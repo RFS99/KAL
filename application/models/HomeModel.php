@@ -104,7 +104,7 @@ class HomeModel extends CI_Model
 		if (!empty($studio)) {
 			$studios = "'" . join("','", $studio) . "'";
 			$sql .= "
-				OR
+				AND
 					std.title IN ({$studios})
 			";
 		}
