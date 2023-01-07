@@ -174,9 +174,19 @@ body table {
 }
 
 .dlandadd {
-	padding: 100px !important;
+	margin-top: 100px !important;
 }
 
 .pdcard-body {
 	padding-left: 100px !important;
+}
+
+.addGenre {
+	width: 100%;
+	min-height: 100px;
+	border-radius: 3px;
+	border: 1px solid #444;
+	padding: 10px;
+	color: #444444;
+	font-size: 14px;
 }

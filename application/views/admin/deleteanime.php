@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<body data-spy="scroll" data-target=".fixed-top"> <br><br><br>
+<body class="bg-light" data-spy="scroll" data-target=".fixed-top"> <br><br><br>
 
 
     <section class="bg-light">
@@ -36,9 +36,10 @@
                                 <td><?= $data['anime_title'] ?></td>
                                 <td>
                                     <form id="form-login" action="<?= base_url('register/delete') ?>" method="post">
-                                        <input type="hidden" name="anime_id" value="<?= $data['anime_id'] ?>"/>
-                                            <button type="submit" class="btn btn-danger btn-sm rounded-0" type="button"
-                                                data-toggle="tooltip" data-placement="top" title="Delete"> <i class="fa fa-trash"></i> </button>
+                                        <input type="hidden" name="anime_id" value="<?= $data['anime_id'] ?>" />
+                                        <button type="submit" class="btn btn-danger btn-sm rounded-0" type="button"
+                                            data-toggle="tooltip" data-placement="top" title="Delete"> <i
+                                                class="fa fa-trash"></i> </button>
                                     </form>
                                 </td>
 

@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="seo & digital marketing">
-    <meta name="keywords"
-        content="marketing,digital marketing,creative, agency, startup,promodise,onepage, clean, modern,seo,business, company">
+    <meta name="keywords" content="marketing,digital marketing,creative, agency, startup,promodise,onepage, clean, modern,seo,business, company">
     <meta name="author" content="Themefisher.com">
 
     <title>Home - Kimi no AnimeList</title>
@@ -40,8 +39,7 @@
         <div class="container">
             <a href="home"><img src="assets/images/Logo2.png" alt="" class=" PISH"></a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
                     <i class="fa fa-bars"></i>
                 </span>
@@ -50,23 +48,22 @@
             <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link active smoth-scroll" href="home">Home <span
-                                class="sr-only">(current)</span></a>
+                        <a class="nav-link active smoth-scroll" href="home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link smoth-scroll" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
                         <?php if ($is_session) : ?>
-                        <?php if ($user_type == 0) : ?>
-                        <!-- User -->
-                        <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Admin</a>
+                            <?php if ($user_type == 0) : ?>
+                                <!-- User -->
+                                <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Admin</a>
+                            <?php else : ?>
+                                <!-- Admin -->
+                                <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Admin</a>
+                            <?php endif; ?>
                         <?php else : ?>
-                        <!-- Admin -->
-                        <a class="nav-link smoth-scroll" href="<?= base_url('admin') ?>">Admin</a>
-                        <?php endif; ?>
-                        <?php else : ?>
-                        <a class="nav-link smoth-scroll" href="<?= base_url('login') ?>">Login Admin</a>
+                            <a class="nav-link smoth-scroll" href="<?= base_url('login') ?>">Login Admin</a>
                         <?php endif; ?>
                     </li>
                 </ul>
@@ -89,8 +86,7 @@
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="container">
-                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
-                                                        style="width: 400px; height:350;">
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt="" style="width: 400px; height:350;">
 
                                                     <p class="banner_text">Kamu bisa mencari anime dengan mengetik judul
                                                         di dalam kotak pencarian</p>
@@ -98,16 +94,14 @@
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
-                                                        style="width: 400px; height:350;">
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt="" style="width: 400px; height:350;">
                                                     <p class="banner_text">Kamu bisa mencari anime menggunakan
                                                         button genre</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="container">
-                                                    <img src="assets/images/Logo-Type-KAL.png" alt=""
-                                                        style="width: 400px; height:350;">
+                                                    <img src="assets/images/Logo-Type-KAL.png" alt="" style="width: 400px; height:350;">
                                                     <p class="banner_text">Kamu bisa mencari anime menggunakan
                                                         button studio</p>
                                                 </div>
@@ -117,7 +111,7 @@
 
                                 </div>
                                 <!-- banner section end -->
-                                <a href="#about" class="btn btn-white btn-circled wadaw">LETS
+                                <a href="#anime-recommendation" class="btn btn-white btn-circled wadaw">LETS
                                     START</a>
                             </div>
 
@@ -140,7 +134,7 @@
                     <hr>
                     <form class="mb-5" action="<?= base_url("search") ?>" method="post" required>
                         <div class="col-md-12 d-flex">
-                            <input type="search" name="keyword" placeholder="Search anime . . ." class="w-100" required>
+                            <input id="tombolcari" type="search" name="keyword" placeholder="Search anime . . ." class="w-100" required>
                             <button id="btn-search" type="submit" class="wadaw btnWadaw">Search</button>
                         </div>
                         <hr>
@@ -150,23 +144,23 @@
                                 <?php if (isset($genre_list) && $genre_list) :
                                     $a = 0;
                                     foreach ($genre_list as $row) : $a++ ?>
-                                <tr>
-                                    <th scope="row"><?= ($a == 1) ? "Genres" : "" ?></th>
-                                    <?php foreach ($row as $genre) : ?>
-                                    <td class="text-left">
-                                        <label class="widiw">
-                                            <input type="checkbox" name="genres[]" value="<?= @$genre->title ?>">
-                                            <span class="checkmark"><?= @$genre->title ?></span>
-                                        </label>
-                                    </td>
-                                    <?php endforeach; ?>
-                                </tr>
-                                <?php
+                                        <tr>
+                                            <th scope="row"><?= ($a == 1) ? "Genres" : "" ?></th>
+                                            <?php foreach ($row as $genre) : ?>
+                                                <td class="text-left">
+                                                    <label class="widiw">
+                                                        <input type="checkbox" name="genres[]" value="<?= @$genre->title ?>">
+                                                        <span class="checkmark"><?= @$genre->title ?></span>
+                                                    </label>
+                                                </td>
+                                            <?php endforeach; ?>
+                                        </tr>
+                                    <?php
                                     endforeach;
                                 else : ?>
-                                <tr>
-                                    <td colspan="100%">Tidak ada data.</td>
-                                </tr>
+                                    <tr>
+                                        <td colspan="100%">Tidak ada data.</td>
+                                    </tr>
                                 <?php endif; ?>
                             </tbody>
                         </table>
@@ -176,23 +170,23 @@
                                 <?php if (isset($studio_list) && $studio_list) :
                                     $a = 0;
                                     foreach ($studio_list as $row) : $a++ ?>
-                                <tr>
-                                    <th scope="row"><?= ($a == 1) ? "Studios" : "" ?></th>
-                                    <?php foreach ($row as $studio) : ?>
-                                    <td class="text-left">
-                                        <label class="widiw">
-                                            <input type="checkbox" name="studios" value="<?= @$studio->title ?>">
-                                            <span class="checkmark"><?= @$studio->title ?></span>
-                                        </label>
-                                    </td>
-                                    <?php endforeach; ?>
-                                </tr>
-                                <?php
+                                        <tr>
+                                            <th scope="row"><?= ($a == 1) ? "Studios" : "" ?></th>
+                                            <?php foreach ($row as $studio) : ?>
+                                                <td class="text-left">
+                                                    <label class="widiw">
+                                                        <input type="checkbox" name="studios" value="<?= @$studio->title ?>">
+                                                        <span class="checkmark"><?= @$studio->title ?></span>
+                                                    </label>
+                                                </td>
+                                            <?php endforeach; ?>
+                                        </tr>
+                                    <?php
                                     endforeach;
                                 else : ?>
-                                <tr>
-                                    <td colspan="100%">Tidak ada data.</td>
-                                </tr>
+                                    <tr>
+                                        <td colspan="100%">Tidak ada data.</td>
+                                    </tr>
                                 <?php endif; ?>
                             </tbody>
                         </table>
@@ -229,15 +223,15 @@
                                 foreach ($anime_rec as $data) :
                             ?>
 
-                            <tr>
-                                <td><?= $no++; ?></td>
-                                <td><?= @$data['anime'][0]->anime_title ?></td>
-                                <td><?= @$data['anime'][0]->description ?></td>
-                                <td><?= @$data['anime'][0]->genre_title ?></td>
-                                <td><?= @$data['anime'][0]->studio_title ?></td>
-                                <td><?= @$data['score']; ?></td>
-                            </tr>
-                            <?php
+                                    <tr>
+                                        <td><?= $no++; ?></td>
+                                        <td><?= @$data['anime'][0]->anime_title ?></td>
+                                        <td><?= @$data['anime'][0]->description ?></td>
+                                        <td><?= @$data['anime'][0]->genre_title ?></td>
+                                        <td><?= @$data['anime'][0]->studio_title ?></td>
+                                        <td><?= @$data['score']; ?></td>
+                                    </tr>
+                                <?php
                                 endforeach;
                                 ?>
                             <?php
@@ -255,7 +249,7 @@
         <!-- search section end -->
     </section>
     <!--  CONTACT START  -->
-    <section id="contact" class="section-padding ">
+    <section id="contact" class="section-padding dlandadd ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-mfd-12">
@@ -268,8 +262,7 @@
             <div class="row">
                 <div class="col-lg-8 col-sm-12 m-auto">
                     <div class="contact-form ">
-                        <form id="form-submit" class="contact__form" method="post"
-                            action="<?= base_url('contact/save') ?>">
+                        <form id="form-submit" class="contact__form" method="post" action="<?= base_url('contact/save') ?>">
                             <!-- form message -->
                             <div class="row">
                                 <div class="col-12">
@@ -287,16 +280,13 @@
                                     <input name="email" type="email" class="form-control" placeholder="Email" required>
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input name="subject" type="text" class="form-control" placeholder="Subject"
-                                        required>
+                                    <input name="subject" type="text" class="form-control" placeholder="Subject" required>
                                 </div>
                                 <div class="col-12 form-group">
-                                    <textarea name="message" class="form-control" rows="6" placeholder="Message"
-                                        required></textarea>
+                                    <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button id="btn-submit" type="submit"
-                                        class="btn btn-hero btn-circled btnWadaw wadaw">Send
+                                    <button id="btn-submit" type="submit" class="btn btn-hero btn-circled btnWadaw wadaw">Send
                                         Message</button>
                                 </div>
                             </div>
@@ -324,9 +314,7 @@
 
     <!-- Main jQuery -->
     <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
-        integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Bootstrap 4.3.1 -->
     <script src="<?= base_url('assets/plugins/bootstrap/js/popper.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
@@ -347,7 +335,7 @@
 
     <!-- home js -->
     <script>
-    var base = "<?= base_url() ?>";
+        var base = "<?= base_url() ?>";
     </script>
     <script src="<?= base_url('assets/js/home.js') ?>"></script>
 </body>

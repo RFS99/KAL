@@ -25,17 +25,17 @@
                                         class="form-control form-control-lg" />
                                 </div> -->
 
-                                <select class="custom-select mb-4" id="inputGroupSelect01" name="genre">
+                                <select class="addGenre" multiple placeholder="Choose Genre" data-allow-clear="1">
                                     <option value="0" selected>Genre</option>
-                                    <?php foreach($genre_list as $list) { ?>
-                                        <option value="<?php echo $list->id; ?>"><?php echo $list->title; ?></option>
+                                    <?php foreach ($genre_list as $list) { ?>
+                                    <option value="<?php echo $list->id; ?>"><?php echo $list->title; ?></option>
                                     <?php } ?>
                                 </select>
 
                                 <select class="custom-select mb-4" id="inputGroupSelect01" name="studio">
                                     <option value="0" selected>Studio</option>
-                                    <?php foreach($studio_list as $list) { ?>
-                                        <option value="<?php echo $list->id; ?>"><?php echo $list->title; ?></option>
+                                    <?php foreach ($studio_list as $list) { ?>
+                                    <option value="<?php echo $list->id; ?>"><?php echo $list->title; ?></option>
                                     <?php } ?>
                                 </select>
 
@@ -58,6 +58,7 @@
     <!-- Alertify JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </body>
 
 </html>

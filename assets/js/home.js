@@ -1,6 +1,14 @@
 $(function () {
 	$("#btn-search").click(function() {
-		$("#loader").css("display","block");
+		var input = $("#tombolcari").val();
+		if(input != ""){
+			$("#loader").css("display","block");
+		}
+		else{
+			alertify.error("Form pencarian tidak boleh kosong")
+		}
+		
+
 	});
 	$('.CheckMemberClassList').bind('click',function(){
 		$('.CheckMemberClassList').removeClass('MemberClassActive').addClass('MemberClassInactive');
