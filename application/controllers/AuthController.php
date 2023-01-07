@@ -2,6 +2,7 @@
 
 class AuthController extends CI_Controller
 {
+	protected $result = [];
 	function __construct()
 	{
 		parent::__construct();
@@ -107,8 +108,8 @@ class AuthController extends CI_Controller
 		/* Valdiator */
 		$title   		= $this->input->post("title") ?? '';
 		$description	= $this->input->post("description") ?? '';
-		$genre 			= $this->input->post("genre") ?? '';
-		$studio			= $this->input->post("studio") ?? '';
+		$genre 			= $this->input->post("genres") ?? '';
+		$studio			= $this->input->post("studios") ?? '';
 
 		if (empty($title)) {
 			$this->result['message'] = "Judul user tidak boleh kosong.";
@@ -139,18 +140,24 @@ class AuthController extends CI_Controller
 		$anime_id = $this->mod->insertid('animes', $data);
 
 		/* Input Studio */
-		$data = [
-			"anime_id"	=> $anime_id,
-			"studio_id"	=> $studio
-		];
-		$this->mod->insert('anime_studio_details', $data);
+		for($i = 0; $i < count($studio); $i++){
+			$data = [
+				"anime_id"	=> $anime_id,
+				"studio_id"	=> $studio[$i]
+			];
+			$this->mod->insert('anime_studio_details', $data);
+
+		}
 
 		/* Input Genre */
-		$data = [
-			"anime_id"	=> $anime_id,
-			"genre_id"	=> $genre
-		];
-		$this->mod->insert('anime_genre_details', $data);
+		for($i = 0; $i < count($studio); $i++){
+			$data = [
+				"anime_id"	=> $anime_id,
+				"genre_id"	=> $genre[$i]
+			];
+			$this->mod->insert('anime_genre_details', $data);
+
+		}
 
 		$this->result['status']  = "done";
 		$this->result['message'] = "Berhasil memasukkan data.";

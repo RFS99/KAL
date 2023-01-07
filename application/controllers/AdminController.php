@@ -2,6 +2,7 @@
 
 class AdminController extends CI_Controller
 {
+	protected $result = [];
 	function __construct()
 	{
 		parent::__construct();
@@ -48,6 +49,11 @@ class AdminController extends CI_Controller
 			redirect("/");
 		}
 
+		/** CSS **/
+		$data['css'] = [
+			base_url("assets/js/admin/list-user")
+		];
+
 		/** JS **/
 		$data['js'] = [
 			base_url("assets/js/admin/list-user")
@@ -78,11 +84,6 @@ class AdminController extends CI_Controller
 		$data['studio_list'] = $studio;
 		$data['all_anime']	= $detail_anime;
 
-
-		/** JS **/
-		$data['js'] = [
-			base_url("assets/js/admin/list-user")
-		];
 		$data['title'] = "Delete Anime";
 		$data['page'] = "admin/deleteanime";
 		$this->load->view("admin/main-content", $data);
