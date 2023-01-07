@@ -53,6 +53,11 @@ class AdminController extends CI_Controller
 			base_url("assets/js/admin/list-user")
 		];
 
+		$studio = $this->mod1->studio_list();
+		$genre = $this->mod1->genre_list();
+		$data['studio_list'] = $studio;
+		$data['genre_list'] = $genre;
+
 		$data['title'] = "Add Anime";
 		$data['page'] = "admin/addanime";
 		$this->load->view("admin/main-content", $data);

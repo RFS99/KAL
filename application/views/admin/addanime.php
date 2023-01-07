@@ -12,21 +12,33 @@
                             <h3 class="mb-5 text-center text-title">Add Anime</h3>
                             <form id="form-login" action="<?= base_url('register/save') ?>" method="post">
                                 <div class="form-outline mb-4">
-                                    <input type="text" placeholder="Judul Anime" name="fullname"
+                                    <input type="text" placeholder="Judul Anime" name="title"
                                         class="form-control form-control-lg" />
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" placeholder="Sinopsis" name="fullname"
+                                    <input type="text" placeholder="Sinopsis" name="description"
                                         class="form-control form-control-lg" />
                                 </div>
-                                <div class="form-outline mb-4">
-                                    <input type="text" placeholder="Genre" name="fullname"
+
+                                <!-- <div class="form-outline mb-4">
+                                    <input type="text" placeholder="Genre" name="genre"
                                         class="form-control form-control-lg" />
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <input type="text" placeholder="Studio" name="fullname"
-                                        class="form-control form-control-lg" />
-                                </div>
+                                </div> -->
+
+                                <select class="custom-select mb-4" id="inputGroupSelect01" name="genre">
+                                    <option value="0" selected>Genre</option>
+                                    <?php foreach($genre_list as $list) { ?>
+                                        <option value="<?php echo $list->id; ?>"><?php echo $list->title; ?></option>
+                                    <?php } ?>
+                                </select>
+
+                                <select class="custom-select mb-4" id="inputGroupSelect01" name="studio">
+                                    <option value="0" selected>Studio</option>
+                                    <?php foreach($studio_list as $list) { ?>
+                                        <option value="<?php echo $list->id; ?>"><?php echo $list->title; ?></option>
+                                    <?php } ?>
+                                </select>
+
                                 <button id="btn-submit" class="btn btn-lg btn-block btn-login wadaw btnWadaw"
                                     type="submit">Submit</button>
 

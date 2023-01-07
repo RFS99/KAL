@@ -35,10 +35,11 @@
                                 <td><?= $no++; ?></td>
                                 <td><?= $data['anime_title'] ?></td>
                                 <td>
-                                    <a><button class="btn btn-danger btn-sm rounded-0" type="button"
-                                            data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                class="fa fa-trash"></i></button></a>
-
+                                    <form id="form-login" action="<?= base_url('register/delete') ?>" method="post">
+                                        <input type="hidden" name="anime_id" value="<?= $data['anime_id'] ?>"/>
+                                            <button type="submit" class="btn btn-danger btn-sm rounded-0" type="button"
+                                                data-toggle="tooltip" data-placement="top" title="Delete"> <i class="fa fa-trash"></i> </button>
+                                    </form>
                                 </td>
 
 

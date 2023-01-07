@@ -104,82 +104,71 @@ class AuthController extends CI_Controller
 
 	function register()
 	{
-		$fullname   		= $this->input->post("fullname") ?? '';
-		$email 				= $this->input->post("email") ?? '';
-		$password 			= $this->input->post("password") ?? '';
-		$confirm_password 	= $this->input->post("confirm_password") ?? '';
+		/* Valdiator */
+		$title   		= $this->input->post("title") ?? '';
+		$description	= $this->input->post("description") ?? '';
+		$genre 			= $this->input->post("genre") ?? '';
+		$studio			= $this->input->post("studio") ?? '';
 
-		if (empty($fullname)) {
-			$this->result['message'] = "Nama user tidak boleh kosong.";
+		if (empty($title)) {
+			$this->result['message'] = "Judul user tidak boleh kosong.";
 			echo json_encode($this->result);
 			exit;
 		}
-		if (empty($email)) {
-			$this->result['message'] = "Email tidak boleh kosong.";
+		if (empty($description)) {
+			$this->result['message'] = "Deskripsi tidak boleh kosong.";
 			echo json_encode($this->result);
 			exit;
 		}
-		if (empty($password)) {
-			$this->result['message'] = "Password tidak boleh kosong.";
+		if ($genre == 0) {
+			$this->result['message'] = "Genre tidak boleh kosong.";
 			echo json_encode($this->result);
 			exit;
 		}
-		if (empty($confirm_password)) {
-			$this->result['message'] = "Kofirmasi password tidak boleh kosong.";
-			echo json_encode($this->result);
-			exit;
-		}
-
-		if ($password !== $confirm_password) {
-			$this->result['message'] = "Password dan Konfirmasi password tidak sama.";
+		if ($studio == 0) {
+			$this->result['message'] = "Studio tidak boleh kosong.";
 			echo json_encode($this->result);
 			exit;
 		}
 
-		/* Check email has been used or not */
-		$check_email = $this->mod->check_userExist($email);
-		if ($check_email) {
-			if ($check_email[0]->user_status == 0) {
-				$this->result['message'] = "Email sudah digunakan dan belum terverifikasi. Harap verifikasi terlebih dahulu.";
-				echo json_encode($this->result);
-				exit;
-			}
-			$this->result['message'] = "Email sudah digunakan.";
-			echo json_encode($this->result);
-			exit;
-		}
-
-		/* Default Password*/
-		$password = password_hash($password, PASSWORD_DEFAULT);
-
+		/* Input Anime */
 		$data = [
-			"fullname"		=> $fullname,
-			"email"			=> $email,
-			"password"		=> $password,
-			"user_type"		=> 0,
-			"is_active"		=> 0,
-			"user_status"   => 0,
-			"created_at"   	=> date("Y-m-d H:i:s")
+			"title"			=> $title,
+			"description"	=> $description
 		];
+		$anime_id = $this->mod->insertid('animes', $data);
 
-		/* insert user */
-		$user_id = $this->mod->insertid('admin', $data);
-
-		$token = md5(date("Y-m-d H:i:s") . $email);
-		/* insert token */
-		$data_token = [
-			"user_id" => $user_id,
-			"token"	=> $token,
-			"valid_until"	=> date('Y-m-d H:i:s', strtotime('+10 minutes')),
-			"created_at"	=> date("Y-m-d H:i:s")
+		/* Input Studio */
+		$data = [
+			"anime_id"	=> $anime_id,
+			"studio_id"	=> $studio
 		];
-		$this->mod->insert('user_activations', $data_token);
-		$url_verif = base_url('verification?token=' . $token . '&user_id=' . $user_id);
+		$this->mod->insert('anime_studio_details', $data);
 
-		$this->email_task($url_verif, $email);
+		/* Input Genre */
+		$data = [
+			"anime_id"	=> $anime_id,
+			"genre_id"	=> $genre
+		];
+		$this->mod->insert('anime_genre_details', $data);
 
 		$this->result['status']  = "done";
-		$this->result['message'] = "Berhasil registrasi data. Cek email untuk aktivasi aku.";
+		$this->result['message'] = "Berhasil memasukkan data.";
+		echo json_encode($this->result);
+		exit;
+	}
+
+	function delete()
+	{
+		/* Valdiator */
+		$anime_id = $this->input->post("anime_id") ?? '';
+
+		if (!empty($anime_id)) {
+			$this->mod->delete('animes', $anime_id);
+		}
+
+		$this->result['status']  = "done";
+		$this->result['message'] = "Berhasil menghapus data.";
 		$this->result['data'] = [];
 		echo json_encode($this->result);
 		exit;

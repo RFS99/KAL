@@ -55,6 +55,7 @@ $route['login']             = 'AuthController/index';
 $route['register']             = 'AuthController/index_register';
 $route['activation']         = 'AuthController/index_activation';
 $route['register/save']     = 'AuthController/register';
+$route['register/delete']     = 'AuthController/delete';
 $route['login/do-login']     = 'AuthController/login';
 $route['verification']         = 'AuthController/verification';
 $route['generate-token']     = 'AuthController/generate_newToken';
@@ -74,7 +75,7 @@ $route['admin/message']             = 'AdminController/index_message';
 $route['admin/message/detail']         = 'AdminController/index_detail_message';
 $route['admin/addanime']            = 'AdminController/addanime';
 $route['admin/deleteanime']         = 'AdminController/deleteanime';
-
+$route['admin/saveanime']            = 'AdminController/saveanime';
 
 /******* User *******/
 $route['user']                 = 'UserController/index';

@@ -93,4 +93,14 @@ class AuthModel extends CI_Model
 		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
+
+	function delete($table, $data){
+		$this->db->where('anime_id', $data);
+		$this->db->delete('anime_genre_details');
+		$this->db->where('anime_id', $data);
+		$this->db->delete('anime_studio_details');
+		
+		$this->db->where('id', $data);
+		$this->db->delete($table);
+	}
 }
