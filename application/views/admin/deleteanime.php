@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 
-<body data-spy="scroll" data-target=".fixed-top">
+<body data-spy="scroll" data-target=".fixed-top"> <br><br><br>
+
+
     <section class="bg-light">
-        <h3 class="mb-5 text-center text-title">Delete Anime</h3>
+        <div class="dlandadd text-center mb-5">
+            <h3>Delete Anime</h3>
+        </div>
         <!-- search section start -->
         <div class="card container">
             <div class="card-body ">
                 <div class="container">
                     <br>
                     <br>
-
                     <table border="1" class="table table-striped text-dark">
                         <thead class="thead-dark">
                             <tr>
@@ -24,15 +27,18 @@
                             <?php
                             $no = 1;
 
-                            if (isset($animerec)) {
-                                foreach ($animerec as $data) :
+                            if (isset($all_anime)) {
+                                foreach ($all_anime as $data) :
                             ?>
 
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $data['anime_title']; ?>
+                                <td><?= $data['anime_title'] ?></td>
                                 <td>
-                                    <?php echo anchor('Hapus'); ?>
+                                    <a><button class="btn btn-danger btn-sm rounded-0" type="button"
+                                            data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                                class="fa fa-trash"></i></button></a>
+
                                 </td>
 
 

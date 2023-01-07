@@ -43,7 +43,7 @@ header('Access-Control-Allow-Origin: *');
 
     <nav class="navbar navbar-expand-lg fixed-top trans-navigation header-white bl">
         <div class="container">
-            <a class="navbar-brand" href="<?= base_url('admin') ?>"><img src="assets/images/Logo2.png" alt=""
+            <a class="navbar-brand" href="<?= base_url('home') ?>"><img src="assets/images/Logo2.png" alt=""
                     class=" PISH"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
                 aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@ header('Access-Control-Allow-Origin: *');
                 <ul class="navbar-nav ">
                     <li class="nav-item">
                         <a class="nav-link <?= @$title == "Dashboard" ? "active" : null ?> smoth-scroll"
-                            href="<?= base_url('admin') ?>">Home</a>
+                            href="<?= base_url('home') ?>">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= @$title == "Add Anime" ? "active" : null ?> smoth-scroll"

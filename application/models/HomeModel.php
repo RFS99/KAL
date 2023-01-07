@@ -2,6 +2,23 @@
 
 class HomeModel extends CI_Model
 {
+	function all_anime()
+	{
+		$sql = "
+		SELECT 
+			anm.id as anime_id,
+			anm.title as anime_title,
+			description	
+		FROM
+			animes as anm
+		";
+
+		$sql .= "GROUP BY anm.id";
+
+		$q = $this->db->query($sql);
+		return  $q->result_array();
+	}
+
 	public function data_anime($anime_id)
 	{
 		$sql = "
@@ -29,6 +46,7 @@ class HomeModel extends CI_Model
 		$q = $this->db->query($sql);
 		return ($q->num_rows() == 0 ? [] : $q->result());
 	}
+
 	function check_genre_id($genre)
 	{
 		$this->db->select("id");
@@ -90,6 +108,10 @@ class HomeModel extends CI_Model
 			anm.title LIKE 	'%{$search}%'
 		OR
 			anm.description LIKE '%{$search}%'
+		OR
+   			 gnr.title = '{$search}'
+		OR
+    		std.title = '{$search}'
 		";
 		/* GENRE */
 		if (!empty($genre)) {

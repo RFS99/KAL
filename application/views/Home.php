@@ -38,7 +38,7 @@
     </div>
     <nav class="navbar navbar-expand-lg fixed-top trans-navigation bl">
         <div class="container">
-            <img src="assets/images/Logo2.png" alt="" class=" PISH">
+            <a href="home"><img src="assets/images/Logo2.png" alt="" class=" PISH"></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
                 aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link active smoth-scroll" href=".banner-area">Home <span
+                        <a class="nav-link active smoth-scroll" href="home">Home <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">

@@ -160,8 +160,8 @@ class Home extends CI_Controller
 		$index = 0;
 		foreach ($score as $key => $val) {
 			$index++;
-			/* Maximal mengambil 10 data saja */
-			if ($index <= 10) {
+			/* Maximal mengambil 15 data saja */
+			if ($index <= 15) {
 				$detail_anime = $this->mod->data_anime($key);
 				$detail = [
 					"anime" => $detail_anime,
