@@ -13,7 +13,7 @@ class HomeModel extends CI_Model
 			animes as anm
 		";
 
-		$sql .= "GROUP BY anm.id";
+		$sql .= "ORDER BY anime_title ASC";
 
 		$q = $this->db->query($sql);
 		return  $q->result_array();
@@ -158,6 +158,22 @@ class HomeModel extends CI_Model
 	{
 		$this->db->select("*");
 		$this->db->from("genres");
+		$this->db->order_by('title ASC');
+
+		$q = $this->db->get();
+		return ($q->num_rows() == 0 ? FALSE : $q->result());
+	}
+
+	function genre_listHome()
+	{
+		$this->db->select("*");
+		$this->db->from("genres");
+		$this->db->where("title != 'Ecchi' ");
+		$this->db->where("title != 'Hentai' ");
+		$this->db->where("title != 'Adult Cast' ");
+		$this->db->where("title != 'Boys Love' ");
+		$this->db->order_by('title ASC');
+
 		$q = $this->db->get();
 		return ($q->num_rows() == 0 ? FALSE : $q->result());
 	}
@@ -166,6 +182,8 @@ class HomeModel extends CI_Model
 	{
 		$this->db->select("*");
 		$this->db->from("studios");
+		$this->db->order_by('title ASC');
+
 		$q = $this->db->get();
 		return ($q->num_rows() == 0 ? FALSE : $q->result());
 	}

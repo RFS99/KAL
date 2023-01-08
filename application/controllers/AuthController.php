@@ -140,23 +140,21 @@ class AuthController extends CI_Controller
 		$anime_id = $this->mod->insertid('animes', $data);
 
 		/* Input Studio */
-		for($i = 0; $i < count($studio); $i++){
+		for ($i = 0; $i < count($studio); $i++) {
 			$data = [
 				"anime_id"	=> $anime_id,
 				"studio_id"	=> $studio[$i]
 			];
 			$this->mod->insert('anime_studio_details', $data);
-
 		}
 
 		/* Input Genre */
-		for($i = 0; $i < count($studio); $i++){
+		for ($i = 0; $i < count($genre); $i++) {
 			$data = [
 				"anime_id"	=> $anime_id,
 				"genre_id"	=> $genre[$i]
 			];
 			$this->mod->insert('anime_genre_details', $data);
-
 		}
 
 		$this->result['status']  = "done";

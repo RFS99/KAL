@@ -49,7 +49,8 @@
                                 </div>
                                 <button class="btn btn-lg btn-block btn-login" type="submit">Masuk</button>
                                 <div class="col-12 text-center mt-5">
-
+                                    <span>Kembali ke home? <a href="<?= base_url("home") ?>"
+                                            class="text-register">Home</a></span>
                                 </div>
                             </form>
 

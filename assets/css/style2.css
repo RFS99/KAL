@@ -170,7 +170,7 @@ body table {
 
 .card-body {
 	padding-left: 50px !important;
-	padding-right: 100px !important;
+	padding-right: 50px !important;
 }
 
 .dlandadd {
@@ -189,4 +189,29 @@ body table {
 	padding: 10px;
 	color: #444444;
 	font-size: 14px;
+}
+
+.th0 {
+	white-space: nowrap;
+	width: 1%;
+}
+
+.th1 {
+	width: 15%;
+}
+
+.th2 {
+	width: 55%;
+}
+
+.th3 {
+	width: 15%;
+}
+
+.th4 {
+	width: 5%;
+}
+
+.th5 {
+	width: 5%;
 }

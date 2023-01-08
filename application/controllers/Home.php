@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 class Home extends CI_Controller
 {
 	protected $result = [];
@@ -27,7 +26,7 @@ class Home extends CI_Controller
 			$user_type = @$this->hasLogin()->user_type;
 		}
 
-		$genre = $this->mod->genre_list();
+		$genre = $this->mod->genre_listHome();
 		$studio = $this->mod->studio_list();
 
 		$data['genre_list'] = (!$genre) ? [] : array_chunk($genre, 7);
@@ -180,7 +179,7 @@ class Home extends CI_Controller
 			$user_type = @$this->hasLogin()->user_type;
 		}
 
-		$genre = $this->mod->genre_list();
+		$genre = $this->mod->genre_listHome();
 		$studio = $this->mod->studio_list();
 
 		$data['genre_list'] = (!$genre) ? [] : array_chunk($genre, 7);
